@@ -1,4 +1,4 @@
-\begin{thebibliography}{25}
+\begin{thebibliography}{66}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -12,15 +12,93 @@
 \providecommand{\bibinfo}[2]{#2}
 \providecommand{\eprint}[2][]{\url{#2}}
 
-\bibitem[{\citenamefont{{Abell} et~al.}(2009)}]{2009:lsst}
-\bibinfo{author}{\bibfnamefont{P.~A.} \bibnamefont{{Abell}}}
-  \bibnamefont{et~al.} (\bibinfo{collaboration}{LSST Science Collaboration}),
-  \bibinfo{journal}{ArXiv e-prints}  (\bibinfo{year}{2009}),
-  \eprint{0912.0201}.
+\bibitem[{\citenamefont{{Alam} et~al.}(2017)\citenamefont{{Alam}, {Ata},
+  {Bailey}, {Beutler}, {Bizyaev}, {Blazek}, {Bolton}, {Brownstein}, {Burden},
+  {Chuang} et~al.}}]{2017SDSS}
+\bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{{Alam}}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Ata}}},
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{{Bailey}}},
+  \bibinfo{author}{\bibfnamefont{F.}~\bibnamefont{{Beutler}}},
+  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{{Bizyaev}}},
+  \bibinfo{author}{\bibfnamefont{J.~A.} \bibnamefont{{Blazek}}},
+  \bibinfo{author}{\bibfnamefont{A.~S.} \bibnamefont{{Bolton}}},
+  \bibinfo{author}{\bibfnamefont{J.~R.} \bibnamefont{{Brownstein}}},
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Burden}}},
+  \bibinfo{author}{\bibfnamefont{C.-H.} \bibnamefont{{Chuang}}},
+  \bibnamefont{et~al.}, \bibinfo{journal}{\mnras}
+  \textbf{\bibinfo{volume}{470}}, \bibinfo{pages}{2617} (\bibinfo{year}{2017}),
+  \eprint{1607.03155}.
+
+\bibitem[{\citenamefont{{Dark Energy Survey Collaboration}
+  et~al.}(2016)\citenamefont{{Dark Energy Survey Collaboration}, {Abbott},
+  {Abdalla}, {Aleksi{\'c}}, {Allam}, {Amara}, {Bacon}, {Balbinot}, {Banerji},
+  {Bechtol} et~al.}}]{2016DES}
+\bibinfo{author}{\bibnamefont{{Dark Energy Survey Collaboration}}},
+  \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{{Abbott}}},
+  \bibinfo{author}{\bibfnamefont{F.~B.} \bibnamefont{{Abdalla}}},
+  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{{Aleksi{\'c}}}},
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{{Allam}}},
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Amara}}},
+  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{{Bacon}}},
+  \bibinfo{author}{\bibfnamefont{E.}~\bibnamefont{{Balbinot}}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Banerji}}},
+  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{{Bechtol}}},
+  \bibnamefont{et~al.}, \bibinfo{journal}{\mnras}
+  \textbf{\bibinfo{volume}{460}}, \bibinfo{pages}{1270} (\bibinfo{year}{2016}),
+  \eprint{1601.00329}.
+
+\bibitem[{\citenamefont{{Takada} et~al.}(2014)\citenamefont{{Takada}, {Ellis},
+  {Chiba}, {Greene}, {Aihara}, {Arimoto}, {Bundy}, {Cohen}, {Dor{\'e}},
+  {Graves} et~al.}}]{2014PFS}
+\bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Takada}}},
+  \bibinfo{author}{\bibfnamefont{R.~S.} \bibnamefont{{Ellis}}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Chiba}}},
+  \bibinfo{author}{\bibfnamefont{J.~E.} \bibnamefont{{Greene}}},
+  \bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{{Aihara}}},
+  \bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{{Arimoto}}},
+  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{{Bundy}}},
+  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{{Cohen}}},
+  \bibinfo{author}{\bibfnamefont{O.}~\bibnamefont{{Dor{\'e}}}},
+  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{{Graves}}},
+  \bibnamefont{et~al.}, \bibinfo{journal}{\pasj} \textbf{\bibinfo{volume}{66}},
+  \bibinfo{eid}{R1} (\bibinfo{year}{2014}), \eprint{1206.0737}.
+
+\bibitem[{\citenamefont{{DESI Collaboration} et~al.}(2016)\citenamefont{{DESI
+  Collaboration}, {Aghamousa}, {Aguilar}, {Ahlen}, {Alam}, {Allen}, {Allende
+  Prieto}, {Annis}, {Bailey}, {Balland} et~al.}}]{2016DESI}
+\bibinfo{author}{\bibnamefont{{DESI Collaboration}}},
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Aghamousa}}},
+  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{{Aguilar}}},
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{{Ahlen}}},
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{{Alam}}},
+  \bibinfo{author}{\bibfnamefont{L.~E.} \bibnamefont{{Allen}}},
+  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{{Allende Prieto}}},
+  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{{Annis}}},
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{{Bailey}}},
+  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{{Balland}}},
+  \bibnamefont{et~al.}, \bibinfo{journal}{ArXiv e-prints}
+  (\bibinfo{year}{2016}), \eprint{1611.00036}.
+
+\bibitem[{\citenamefont{{LSST Science Collaboration}
+  et~al.}(2009)\citenamefont{{LSST Science Collaboration}, {Abell}, {Allison},
+  {Anderson}, {Andrew}, {Angel}, {Armus}, {Arnett}, {Asztalos}, {Axelrod}
+  et~al.}}]{2009LSST}
+\bibinfo{author}{\bibnamefont{{LSST Science Collaboration}}},
+  \bibinfo{author}{\bibfnamefont{P.~A.} \bibnamefont{{Abell}}},
+  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{{Allison}}},
+  \bibinfo{author}{\bibfnamefont{S.~F.} \bibnamefont{{Anderson}}},
+  \bibinfo{author}{\bibfnamefont{J.~R.} \bibnamefont{{Andrew}}},
+  \bibinfo{author}{\bibfnamefont{J.~R.~P.} \bibnamefont{{Angel}}},
+  \bibinfo{author}{\bibfnamefont{L.}~\bibnamefont{{Armus}}},
+  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{{Arnett}}},
+  \bibinfo{author}{\bibfnamefont{S.~J.} \bibnamefont{{Asztalos}}},
+  \bibinfo{author}{\bibfnamefont{T.~S.} \bibnamefont{{Axelrod}}},
+  \bibnamefont{et~al.}, \bibinfo{journal}{ArXiv e-prints}
+  (\bibinfo{year}{2009}), \eprint{0912.0201}.
 
 \bibitem[{\citenamefont{{Amendola} et~al.}(2013)\citenamefont{{Amendola},
   {Appleby}, {Bacon}, {Baker}, {Baldi}, {Bartolo}, {Blanchard}, {Bonvin},
-  {Borgani}, {Branchini} et~al.}}]{2012:euclid}
+  {Borgani}, {Branchini} et~al.}}]{2012Euclid}
 \bibinfo{author}{\bibfnamefont{L.}~\bibnamefont{{Amendola}}},
   \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{{Appleby}}},
   \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{{Bacon}}},
@@ -35,60 +113,375 @@
   \textbf{\bibinfo{volume}{16}}, \bibinfo{pages}{6} (\bibinfo{year}{2013}),
   \eprint{1206.1225}.
 
-\bibitem[{\citenamefont{{Adam} et~al.}(2015)}]{2015arXiv150201582P}
-\bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{{Adam}}} \bibnamefont{et~al.}
-  (\bibinfo{collaboration}{Planck Collaboration}), \bibinfo{journal}{ArXiv
-  e-prints}  (\bibinfo{year}{2015}), \eprint{1502.01582}.
+\bibitem[{\citenamefont{{Planck Collaboration}
+  et~al.}(2016{\natexlab{a}})\citenamefont{{Planck Collaboration}, {Adam},
+  {Ade}, {Aghanim}, {Akrami}, {Alves}, {Arg{\"u}eso}, {Arnaud}, {Arroja},
+  {Ashdown} et~al.}}]{2016Planck}
+\bibinfo{author}{\bibnamefont{{Planck Collaboration}}},
+  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{{Adam}}},
+  \bibinfo{author}{\bibfnamefont{P.~A.~R.} \bibnamefont{{Ade}}},
+  \bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{{Aghanim}}},
+  \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{{Akrami}}},
+  \bibinfo{author}{\bibfnamefont{M.~I.~R.} \bibnamefont{{Alves}}},
+  \bibinfo{author}{\bibfnamefont{F.}~\bibnamefont{{Arg{\"u}eso}}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Arnaud}}},
+  \bibinfo{author}{\bibfnamefont{F.}~\bibnamefont{{Arroja}}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Ashdown}}},
+  \bibnamefont{et~al.}, \bibinfo{journal}{\aap} \textbf{\bibinfo{volume}{594}},
+  \bibinfo{eid}{A1} (\bibinfo{year}{2016}{\natexlab{a}}), \eprint{1502.01582}.
 
-\bibitem[{\citenamefont{{Wu} et~al.}(2014)\citenamefont{{Wu}, {Errard},
-  {Dvorkin}, {Kuo}, {Lee}, {McDonald}, {Slosar}, and
-  {Zahn}}}]{2014ApJ...788..138W}
-\bibinfo{author}{\bibfnamefont{W.~L.~K.} \bibnamefont{{Wu}}},
-  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{{Errard}}},
-  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{{Dvorkin}}},
-  \bibinfo{author}{\bibfnamefont{C.~L.} \bibnamefont{{Kuo}}},
-  \bibinfo{author}{\bibfnamefont{A.~T.} \bibnamefont{{Lee}}},
-  \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{{McDonald}}},
-  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Slosar}}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{O.}~\bibnamefont{{Zahn}}},
-  \bibinfo{journal}{\apj} \textbf{\bibinfo{volume}{788}}, \bibinfo{eid}{138}
-  (\bibinfo{year}{2014}), \eprint{1402.4108}.
+\bibitem[{\citenamefont{{Benson} et~al.}(2014)\citenamefont{{Benson}, {Ade},
+  {Ahmed}, {Allen}, {Arnold}, {Austermann}, {Bender}, {Bleem}, {Carlstrom},
+  {Chang} et~al.}}]{2014SPT-3G}
+\bibinfo{author}{\bibfnamefont{B.~A.} \bibnamefont{{Benson}}},
+  \bibinfo{author}{\bibfnamefont{P.~A.~R.} \bibnamefont{{Ade}}},
+  \bibinfo{author}{\bibfnamefont{Z.}~\bibnamefont{{Ahmed}}},
+  \bibinfo{author}{\bibfnamefont{S.~W.} \bibnamefont{{Allen}}},
+  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{{Arnold}}},
+  \bibinfo{author}{\bibfnamefont{J.~E.} \bibnamefont{{Austermann}}},
+  \bibinfo{author}{\bibfnamefont{A.~N.} \bibnamefont{{Bender}}},
+  \bibinfo{author}{\bibfnamefont{L.~E.} \bibnamefont{{Bleem}}},
+  \bibinfo{author}{\bibfnamefont{J.~E.} \bibnamefont{{Carlstrom}}},
+  \bibinfo{author}{\bibfnamefont{C.~L.} \bibnamefont{{Chang}}},
+  \bibnamefont{et~al.}, in \emph{\bibinfo{booktitle}{Millimeter, Submillimeter,
+  and Far-Infrared Detectors and Instrumentation for Astronomy VII}}
+  (\bibinfo{year}{2014}), vol. \bibinfo{volume}{9153} of
+  \emph{\bibinfo{series}{\procspie}}, p. \bibinfo{pages}{91531P},
+  \eprint{1407.2973}.
+
+\bibitem[{\citenamefont{{Henderson} et~al.}(2016)\citenamefont{{Henderson},
+  {Allison}, {Austermann}, {Baildon}, {Battaglia}, {Beall}, {Becker}, {De
+  Bernardis}, {Bond}, {Calabrese} et~al.}}]{2016AdvACTPol}
+\bibinfo{author}{\bibfnamefont{S.~W.} \bibnamefont{{Henderson}}},
+  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{{Allison}}},
+  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{{Austermann}}},
+  \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{{Baildon}}},
+  \bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{{Battaglia}}},
+  \bibinfo{author}{\bibfnamefont{J.~A.} \bibnamefont{{Beall}}},
+  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{{Becker}}},
+  \bibinfo{author}{\bibfnamefont{F.}~\bibnamefont{{De Bernardis}}},
+  \bibinfo{author}{\bibfnamefont{J.~R.} \bibnamefont{{Bond}}},
+  \bibinfo{author}{\bibfnamefont{E.}~\bibnamefont{{Calabrese}}},
+  \bibnamefont{et~al.}, \bibinfo{journal}{Journal of Low Temperature Physics}
+  \textbf{\bibinfo{volume}{184}}, \bibinfo{pages}{772} (\bibinfo{year}{2016}),
+  \eprint{1510.02809}.
+
+\bibitem[{\citenamefont{{Abazajian} et~al.}(2016)\citenamefont{{Abazajian},
+  {Adshead}, {Ahmed}, {Allen}, {Alonso}, {Arnold}, {Baccigalupi}, {Bartlett},
+  {Battaglia}, {Benson} et~al.}}]{2016CMB-S4}
+\bibinfo{author}{\bibfnamefont{K.~N.} \bibnamefont{{Abazajian}}},
+  \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{{Adshead}}},
+  \bibinfo{author}{\bibfnamefont{Z.}~\bibnamefont{{Ahmed}}},
+  \bibinfo{author}{\bibfnamefont{S.~W.} \bibnamefont{{Allen}}},
+  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{{Alonso}}},
+  \bibinfo{author}{\bibfnamefont{K.~S.} \bibnamefont{{Arnold}}},
+  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{{Baccigalupi}}},
+  \bibinfo{author}{\bibfnamefont{J.~G.} \bibnamefont{{Bartlett}}},
+  \bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{{Battaglia}}},
+  \bibinfo{author}{\bibfnamefont{B.~A.} \bibnamefont{{Benson}}},
+  \bibnamefont{et~al.}, \bibinfo{journal}{ArXiv e-prints}
+  (\bibinfo{year}{2016}), \eprint{1610.02743}.
 
 \bibitem[{\citenamefont{{Chang} et~al.}(2008)\citenamefont{{Chang}, {Pen},
-  {Peterson}, and {McDonald}}}]{2008:21cm}
+  {Peterson}, and {McDonald}}}]{2008IM}
 \bibinfo{author}{\bibfnamefont{T.-C.} \bibnamefont{{Chang}}},
   \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
   \bibinfo{author}{\bibfnamefont{J.~B.} \bibnamefont{{Peterson}}},
   \bibnamefont{and}
   \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{{McDonald}}},
-  \bibinfo{journal}{Physical Review Letters} \textbf{\bibinfo{volume}{100}},
-  \bibinfo{eid}{091303} (\bibinfo{year}{2008}), \eprint{0709.3672}.
+  \bibinfo{journal}{\prl} \textbf{\bibinfo{volume}{100}}, \bibinfo{eid}{091303}
+  (\bibinfo{year}{2008}), \eprint{0709.3672}.
 
-\bibitem[{\citenamefont{Chang et~al.}(2010)\citenamefont{Chang, Pen, Bandura,
-  and Peterson}}]{chang}
-\bibinfo{author}{\bibfnamefont{T.-C.} \bibnamefont{Chang}},
-  \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{Pen}},
-  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Bandura}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{J.~B.} \bibnamefont{Peterson}},
-  \bibinfo{journal}{Nature} \textbf{\bibinfo{volume}{466}},
-  \bibinfo{pages}{463} (\bibinfo{year}{2010}), \eprint{1007.3709}.
+\bibitem[{\citenamefont{{Loeb} and {Wyithe}}(2008)}]{2008IM2}
+\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Loeb}}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{J.~S.~B.} \bibnamefont{{Wyithe}}},
+  \bibinfo{journal}{\prl} \textbf{\bibinfo{volume}{100}}, \bibinfo{eid}{161301}
+  (\bibinfo{year}{2008}), \eprint{0801.1677}.
 
-\bibitem[{\citenamefont{{Furlanetto} and {Lidz}}(2007)}]{2007ApJ...660.1030F}
-\bibinfo{author}{\bibfnamefont{S.~R.} \bibnamefont{{Furlanetto}}}
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Lidz}}},
-  \bibinfo{journal}{\apj} \textbf{\bibinfo{volume}{660}}, \bibinfo{pages}{1030}
-  (\bibinfo{year}{2007}), \eprint{astro-ph/0611274}.
+\bibitem[{\citenamefont{{Seo} et~al.}(2010)\citenamefont{{Seo}, {Dodelson},
+  {Marriner}, {Mcginnis}, {Stebbins}, {Stoughton}, and {Vallinotto}}}]{2010IM}
+\bibinfo{author}{\bibfnamefont{H.-J.} \bibnamefont{{Seo}}},
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{{Dodelson}}},
+  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{{Marriner}}},
+  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{{Mcginnis}}},
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Stebbins}}},
+  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{{Stoughton}}},
+  \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Vallinotto}}},
+  \bibinfo{journal}{\apj} \textbf{\bibinfo{volume}{721}}, \bibinfo{pages}{164}
+  (\bibinfo{year}{2010}), \eprint{0910.5007}.
 
-\bibitem[{\citenamefont{{Adshead} and
-  {Furlanetto}}(2008)}]{2008MNRAS.384..291A}
-\bibinfo{author}{\bibfnamefont{P.~J.} \bibnamefont{{Adshead}}}
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{S.~R.}
-  \bibnamefont{{Furlanetto}}}, \bibinfo{journal}{\mnras}
-  \textbf{\bibinfo{volume}{384}}, \bibinfo{pages}{291} (\bibinfo{year}{2008}),
-  \eprint{0706.3220}.
+\bibitem[{\citenamefont{{Bandura} et~al.}(2014)}]{2014CHIME}
+\bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{{Bandura}}}
+  \bibnamefont{et~al.}, in \emph{\bibinfo{booktitle}{Society of Photo-Optical
+  Instrumentation Engineers (SPIE) Conference Series}} (\bibinfo{year}{2014}),
+  vol. \bibinfo{volume}{9145} of \emph{\bibinfo{series}{Society of
+  Photo-Optical Instrumentation Engineers (SPIE) Conference Series}},
+  p.~\bibinfo{pages}{22}, \eprint{1406.2288}.
+
+\bibitem[{\citenamefont{{Newburgh} et~al.}(2016)\citenamefont{{Newburgh},
+  {Bandura}, {Bucher}, {Chang}, {Chiang}, {Cliche}, {Dav{\'e}}, {Dobbs},
+  {Clarkson}, {Ganga} et~al.}}]{2016HIRAX}
+\bibinfo{author}{\bibfnamefont{L.~B.} \bibnamefont{{Newburgh}}},
+  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{{Bandura}}},
+  \bibinfo{author}{\bibfnamefont{M.~A.} \bibnamefont{{Bucher}}},
+  \bibinfo{author}{\bibfnamefont{T.-C.} \bibnamefont{{Chang}}},
+  \bibinfo{author}{\bibfnamefont{H.~C.} \bibnamefont{{Chiang}}},
+  \bibinfo{author}{\bibfnamefont{J.~F.} \bibnamefont{{Cliche}}},
+  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{{Dav{\'e}}}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Dobbs}}},
+  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{{Clarkson}}},
+  \bibinfo{author}{\bibfnamefont{K.~M.} \bibnamefont{{Ganga}}},
+  \bibnamefont{et~al.}, in \emph{\bibinfo{booktitle}{Ground-based and Airborne
+  Telescopes VI}} (\bibinfo{year}{2016}), vol. \bibinfo{volume}{9906} of
+  \emph{\bibinfo{series}{\procspie}}, p. \bibinfo{pages}{99065X},
+  \eprint{1607.02059}.
+
+\bibitem[{\citenamefont{{Xu} et~al.}(2015)\citenamefont{{Xu}, {Wang}, and
+  {Chen}}}]{2015Tianlai}
+\bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{{Xu}}},
+  \bibinfo{author}{\bibfnamefont{X.}~\bibnamefont{{Wang}}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{X.}~\bibnamefont{{Chen}}},
+  \bibinfo{journal}{\apj} \textbf{\bibinfo{volume}{798}}, \bibinfo{eid}{40}
+  (\bibinfo{year}{2015}), \eprint{1410.7794}.
+
+\bibitem[{\citenamefont{{Battye} et~al.}(2013)\citenamefont{{Battye}, {Browne},
+  {Dickinson}, {Heron}, {Maffei}, and {Pourtsidou}}}]{2013BINGO}
+\bibinfo{author}{\bibfnamefont{R.~A.} \bibnamefont{{Battye}}},
+  \bibinfo{author}{\bibfnamefont{I.~W.~A.} \bibnamefont{{Browne}}},
+  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{{Dickinson}}},
+  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{{Heron}}},
+  \bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{{Maffei}}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Pourtsidou}}},
+  \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{434}},
+  \bibinfo{pages}{1239} (\bibinfo{year}{2013}), \eprint{1209.0343}.
+
+\bibitem[{\citenamefont{{Bigot-Sazy} et~al.}(2016)\citenamefont{{Bigot-Sazy},
+  {Ma}, {Battye}, {Browne}, {Chen}, {Dickinson}, {Harper}, {Maffei}, {Olivari},
+  and {Wilkinsondagger}}}]{2016FAST}
+\bibinfo{author}{\bibfnamefont{M.-A.} \bibnamefont{{Bigot-Sazy}}},
+  \bibinfo{author}{\bibfnamefont{Y.-Z.} \bibnamefont{{Ma}}},
+  \bibinfo{author}{\bibfnamefont{R.~A.} \bibnamefont{{Battye}}},
+  \bibinfo{author}{\bibfnamefont{I.~W.~A.} \bibnamefont{{Browne}}},
+  \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{{Chen}}},
+  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{{Dickinson}}},
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{{Harper}}},
+  \bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{{Maffei}}},
+  \bibinfo{author}{\bibfnamefont{L.~C.} \bibnamefont{{Olivari}}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{P.~N.}
+  \bibnamefont{{Wilkinsondagger}}}, in \emph{\bibinfo{booktitle}{Frontiers in
+  Radio Astronomy and FAST Early Sciences Symposium 2015}}, edited by
+  \bibinfo{editor}{\bibfnamefont{L.}~\bibnamefont{{Qain}}} \bibnamefont{and}
+  \bibinfo{editor}{\bibfnamefont{D.}~\bibnamefont{{Li}}}
+  (\bibinfo{year}{2016}), vol. \bibinfo{volume}{502} of
+  \emph{\bibinfo{series}{Astronomical Society of the Pacific Conference
+  Series}}, p.~\bibinfo{pages}{41}, \eprint{1511.03006}.
+
+\bibitem[{\citenamefont{{Santos} et~al.}(2017)\citenamefont{{Santos}, {Cluver},
+  {Hilton}, {Jarvis}, {Jozsa}, {Leeuw}, {Smirnov}, {Taylor}, {Abdalla},
+  {Afonso} et~al.}}]{2017MeerKAT}
+\bibinfo{author}{\bibfnamefont{M.~G.} \bibnamefont{{Santos}}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Cluver}}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Hilton}}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Jarvis}}},
+  \bibinfo{author}{\bibfnamefont{G.~I.~G.} \bibnamefont{{Jozsa}}},
+  \bibinfo{author}{\bibfnamefont{L.}~\bibnamefont{{Leeuw}}},
+  \bibinfo{author}{\bibfnamefont{O.}~\bibnamefont{{Smirnov}}},
+  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{{Taylor}}},
+  \bibinfo{author}{\bibfnamefont{F.}~\bibnamefont{{Abdalla}}},
+  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{{Afonso}}},
+  \bibnamefont{et~al.}, \bibinfo{journal}{ArXiv e-prints}
+  (\bibinfo{year}{2017}), \eprint{1709.06099}.
+
+\bibitem[{\citenamefont{{Santos} et~al.}(2015)\citenamefont{{Santos}, {Bull},
+  {Alonso}, {Camera}, {Ferreira}, {Bernardi}, {Maartens}, {Viel},
+  {Villaescusa-Navarro}, {Abdalla} et~al.}}]{2015SKA}
+\bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Santos}}},
+  \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{{Bull}}},
+  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{{Alonso}}},
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{{Camera}}},
+  \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{{Ferreira}}},
+  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{{Bernardi}}},
+  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{{Maartens}}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Viel}}},
+  \bibinfo{author}{\bibfnamefont{F.}~\bibnamefont{{Villaescusa-Navarro}}},
+  \bibinfo{author}{\bibfnamefont{F.~B.} \bibnamefont{{Abdalla}}},
+  \bibnamefont{et~al.}, \bibinfo{journal}{Advancing Astrophysics with the
+  Square Kilometre Array (AASKA14)} \bibinfo{eid}{19} (\bibinfo{year}{2015}),
+  \eprint{1501.03989}.
+
+\bibitem[{\citenamefont{{Oh} and {Mack}}(2003)}]{2003FG}
+\bibinfo{author}{\bibfnamefont{S.~P.} \bibnamefont{{Oh}}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{K.~J.} \bibnamefont{{Mack}}},
+  \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{346}},
+  \bibinfo{pages}{871} (\bibinfo{year}{2003}), \eprint{astro-ph/0302099}.
+
+\bibitem[{\citenamefont{{Furlanetto} et~al.}(2006)\citenamefont{{Furlanetto},
+  {Oh}, and {Briggs}}}]{2006FG}
+\bibinfo{author}{\bibfnamefont{S.~R.} \bibnamefont{{Furlanetto}}},
+  \bibinfo{author}{\bibfnamefont{S.~P.} \bibnamefont{{Oh}}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{F.~H.} \bibnamefont{{Briggs}}},
+  \bibinfo{journal}{\physrep} \textbf{\bibinfo{volume}{433}},
+  \bibinfo{pages}{181} (\bibinfo{year}{2006}), \eprint{astro-ph/0608032}.
+
+\bibitem[{\citenamefont{{Datta} et~al.}(2010)\citenamefont{{Datta}, {Bowman},
+  and {Carilli}}}]{2010Wedge}
+\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Datta}}},
+  \bibinfo{author}{\bibfnamefont{J.~D.} \bibnamefont{{Bowman}}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{C.~L.}
+  \bibnamefont{{Carilli}}}, \bibinfo{journal}{\apj}
+  \textbf{\bibinfo{volume}{724}}, \bibinfo{pages}{526} (\bibinfo{year}{2010}),
+  \eprint{1005.4071}.
+
+\bibitem[{\citenamefont{{Morales} et~al.}(2012)\citenamefont{{Morales},
+  {Hazelton}, {Sullivan}, and {Beardsley}}}]{2012Wedge}
+\bibinfo{author}{\bibfnamefont{M.~F.} \bibnamefont{{Morales}}},
+  \bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{{Hazelton}}},
+  \bibinfo{author}{\bibfnamefont{I.}~\bibnamefont{{Sullivan}}},
+  \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Beardsley}}},
+  \bibinfo{journal}{\apj} \textbf{\bibinfo{volume}{752}}, \bibinfo{eid}{137}
+  (\bibinfo{year}{2012}), \eprint{1202.3830}.
+
+\bibitem[{\citenamefont{{Vedantham} et~al.}(2012)\citenamefont{{Vedantham},
+  {Udaya Shankar}, and {Subrahmanyan}}}]{2012Wedge2}
+\bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{{Vedantham}}},
+  \bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{{Udaya Shankar}}},
+  \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{{Subrahmanyan}}},
+  \bibinfo{journal}{\apj} \textbf{\bibinfo{volume}{745}}, \bibinfo{eid}{176}
+  (\bibinfo{year}{2012}), \eprint{1106.1297}.
+
+\bibitem[{\citenamefont{{Pober} et~al.}(2013)\citenamefont{{Pober}, {Parsons},
+  {Aguirre}, {Ali}, {Bradley}, {Carilli}, {DeBoer}, {Dexter}, {Gugliucci},
+  {Jacobs} et~al.}}]{2013Wedge}
+\bibinfo{author}{\bibfnamefont{J.~C.} \bibnamefont{{Pober}}},
+  \bibinfo{author}{\bibfnamefont{A.~R.} \bibnamefont{{Parsons}}},
+  \bibinfo{author}{\bibfnamefont{J.~E.} \bibnamefont{{Aguirre}}},
+  \bibinfo{author}{\bibfnamefont{Z.}~\bibnamefont{{Ali}}},
+  \bibinfo{author}{\bibfnamefont{R.~F.} \bibnamefont{{Bradley}}},
+  \bibinfo{author}{\bibfnamefont{C.~L.} \bibnamefont{{Carilli}}},
+  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{{DeBoer}}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Dexter}}},
+  \bibinfo{author}{\bibfnamefont{N.~E.} \bibnamefont{{Gugliucci}}},
+  \bibinfo{author}{\bibfnamefont{D.~C.} \bibnamefont{{Jacobs}}},
+  \bibnamefont{et~al.}, \bibinfo{journal}{\apjl}
+  \textbf{\bibinfo{volume}{768}}, \bibinfo{eid}{L36} (\bibinfo{year}{2013}),
+  \eprint{1301.7099}.
+
+\bibitem[{\citenamefont{{Pober}}(2015)}]{2015Wedge}
+\bibinfo{author}{\bibfnamefont{J.~C.} \bibnamefont{{Pober}}},
+  \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{447}},
+  \bibinfo{pages}{1705} (\bibinfo{year}{2015}), \eprint{1411.2050}.
+
+\bibitem[{\citenamefont{{Liu} and {Tegmark}}(2011)}]{2011FG}
+\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Liu}}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Tegmark}}},
+  \bibinfo{journal}{\prd} \textbf{\bibinfo{volume}{83}}, \bibinfo{eid}{103006}
+  (\bibinfo{year}{2011}), \eprint{1103.0281}.
+
+\bibitem[{\citenamefont{{Liu} and {Tegmark}}(2012)}]{2012FG}
+\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Liu}}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Tegmark}}},
+  \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{419}},
+  \bibinfo{pages}{3491} (\bibinfo{year}{2012}), \eprint{1106.0007}.
+
+\bibitem[{\citenamefont{{Shaw} et~al.}(2014)\citenamefont{{Shaw}, {Sigurdson},
+  {Pen}, {Stebbins}, and {Sitwell}}}]{2014FG}
+\bibinfo{author}{\bibfnamefont{J.~R.} \bibnamefont{{Shaw}}},
+  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{{Sigurdson}}},
+  \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Stebbins}}},
+  \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Sitwell}}},
+  \bibinfo{journal}{\apj} \textbf{\bibinfo{volume}{781}}, \bibinfo{eid}{57}
+  (\bibinfo{year}{2014}), \eprint{1302.0327}.
+
+\bibitem[{\citenamefont{{Shaw} et~al.}(2015)\citenamefont{{Shaw}, {Sigurdson},
+  {Sitwell}, {Stebbins}, and {Pen}}}]{2015FG}
+\bibinfo{author}{\bibfnamefont{J.~R.} \bibnamefont{{Shaw}}},
+  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{{Sigurdson}}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Sitwell}}},
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Stebbins}}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
+  \bibinfo{journal}{\prd} \textbf{\bibinfo{volume}{91}}, \bibinfo{eid}{083514}
+  (\bibinfo{year}{2015}), \eprint{1401.2095}.
+
+\bibitem[{\citenamefont{{Kirk} et~al.}(2015)\citenamefont{{Kirk}, {Abdalla},
+  {Benoit-L{\'e}vy}, {Bull}, and {Joachimi}}}]{2015xLensing&Photoz}
+\bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{{Kirk}}},
+  \bibinfo{author}{\bibfnamefont{F.~B.} \bibnamefont{{Abdalla}}},
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Benoit-L{\'e}vy}}},
+  \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{{Bull}}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{{Joachimi}}},
+  \bibinfo{journal}{Advancing Astrophysics with the Square Kilometre Array
+  (AASKA14)} \bibinfo{eid}{20} (\bibinfo{year}{2015}), \eprint{1501.03848}.
+
+\bibitem[{\citenamefont{{Pourtsidou} et~al.}(2016)\citenamefont{{Pourtsidou},
+  {Bacon}, {Crittenden}, and {Metcalf}}}]{2016xLensing}
+\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Pourtsidou}}},
+  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{{Bacon}}},
+  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{{Crittenden}}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{R.~B.}
+  \bibnamefont{{Metcalf}}}, \bibinfo{journal}{\mnras}
+  \textbf{\bibinfo{volume}{459}}, \bibinfo{pages}{863} (\bibinfo{year}{2016}),
+  \eprint{1509.03286}.
+
+\bibitem[{\citenamefont{{Pourtsidou}}(2016)}]{2016xLensing2}
+\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Pourtsidou}}},
+  \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{461}},
+  \bibinfo{pages}{1457} (\bibinfo{year}{2016}), \eprint{1511.05927}.
+
+\bibitem[{\citenamefont{{Alonso} and {Ferreira}}(2015)}]{2015xPhotoz}
+\bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{{Alonso}}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{P.~G.} \bibnamefont{{Ferreira}}},
+  \bibinfo{journal}{\prd} \textbf{\bibinfo{volume}{92}}, \bibinfo{eid}{063525}
+  (\bibinfo{year}{2015}), \eprint{1507.03550}.
+
+\bibitem[{\citenamefont{{Fonseca} et~al.}(2015)\citenamefont{{Fonseca},
+  {Camera}, {Santos}, and {Maartens}}}]{2015xPhotoz2}
+\bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{{Fonseca}}},
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{{Camera}}},
+  \bibinfo{author}{\bibfnamefont{M.~G.} \bibnamefont{{Santos}}},
+  \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{{Maartens}}},
+  \bibinfo{journal}{\apjl} \textbf{\bibinfo{volume}{812}}, \bibinfo{eid}{L22}
+  (\bibinfo{year}{2015}), \eprint{1507.04605}.
+
+\bibitem[{\citenamefont{{Fonseca} et~al.}(2017)\citenamefont{{Fonseca},
+  {Maartens}, and {Santos}}}]{2017xPhotoz}
+\bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{{Fonseca}}},
+  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{{Maartens}}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{M.~G.}
+  \bibnamefont{{Santos}}}, \bibinfo{journal}{\mnras}
+  \textbf{\bibinfo{volume}{466}}, \bibinfo{pages}{2780} (\bibinfo{year}{2017}),
+  \eprint{1611.01322}.
+
+\bibitem[{\citenamefont{{Pourtsidou} et~al.}(2017)\citenamefont{{Pourtsidou},
+  {Bacon}, and {Crittenden}}}]{2017xPhotoz&ISW}
+\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Pourtsidou}}},
+  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{{Bacon}}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{{Crittenden}}},
+  \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{470}},
+  \bibinfo{pages}{4251} (\bibinfo{year}{2017}), \eprint{1610.04189}.
+
+\bibitem[{\citenamefont{{Alonso} et~al.}(2017)\citenamefont{{Alonso},
+  {Ferreira}, {Jarvis}, and {Moodley}}}]{2017xPhotoz2}
+\bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{{Alonso}}},
+  \bibinfo{author}{\bibfnamefont{P.~G.} \bibnamefont{{Ferreira}}},
+  \bibinfo{author}{\bibfnamefont{M.~J.} \bibnamefont{{Jarvis}}},
+  \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{{Moodley}}},
+  \bibinfo{journal}{\prd} \textbf{\bibinfo{volume}{96}}, \bibinfo{eid}{043515}
+  (\bibinfo{year}{2017}), \eprint{1704.01941}.
+
+\bibitem[{\citenamefont{{Seljak}}(2009)}]{2009MT}
+\bibinfo{author}{\bibfnamefont{U.}~\bibnamefont{{Seljak}}},
+  \bibinfo{journal}{\prl} \textbf{\bibinfo{volume}{102}}, \bibinfo{eid}{021302}
+  (\bibinfo{year}{2009}), \eprint{0807.1770}.
 
 \bibitem[{\citenamefont{{Pen} et~al.}(2012)\citenamefont{{Pen}, {Sheth},
-  {Harnois-Deraps}, {Chen}, and {Li}}}]{2012:pen}
+  {Harnois-Deraps}, {Chen}, and {Li}}}]{2012Tides}
 \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
   \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{{Sheth}}},
   \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{{Harnois-Deraps}}},
@@ -97,33 +490,77 @@
   \bibinfo{journal}{ArXiv e-prints}  (\bibinfo{year}{2012}),
   \eprint{1202.5804}.
 
-\bibitem[{\citenamefont{Zhu et~al.}(2016)\citenamefont{Zhu, Pen, Yu, Er, and
-  Chen}}]{2015:zhu}
-\bibinfo{author}{\bibfnamefont{H.-M.} \bibnamefont{Zhu}},
-  \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{Pen}},
-  \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{Yu}},
-  \bibinfo{author}{\bibfnamefont{X.}~\bibnamefont{Er}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{X.}~\bibnamefont{Chen}},
-  \bibinfo{journal}{Phys. Rev. D} \textbf{\bibinfo{volume}{93}},
-  \bibinfo{pages}{103504} (\bibinfo{year}{2016}), \eprint{1511.04680}.
+\bibitem[{\citenamefont{{Zhu} et~al.}(2016{\natexlab{a}})\citenamefont{{Zhu},
+  {Pen}, {Yu}, {Er}, and {Chen}}}]{2016Tides}
+\bibinfo{author}{\bibfnamefont{H.-M.} \bibnamefont{{Zhu}}},
+  \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
+  \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{{Yu}}},
+  \bibinfo{author}{\bibfnamefont{X.}~\bibnamefont{{Er}}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{X.}~\bibnamefont{{Chen}}},
+  \bibinfo{journal}{\prd} \textbf{\bibinfo{volume}{93}}, \bibinfo{eid}{103504}
+  (\bibinfo{year}{2016}{\natexlab{a}}), \eprint{1511.04680}.
 
 \bibitem[{\citenamefont{{Schmidt} et~al.}(2014)\citenamefont{{Schmidt},
-  {Pajer}, and {Zaldarriaga}}}]{2014:tidal}
+  {Pajer}, and {Zaldarriaga}}}]{2014Tides}
 \bibinfo{author}{\bibfnamefont{F.}~\bibnamefont{{Schmidt}}},
   \bibinfo{author}{\bibfnamefont{E.}~\bibnamefont{{Pajer}}}, \bibnamefont{and}
   \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Zaldarriaga}}},
   \bibinfo{journal}{\prd} \textbf{\bibinfo{volume}{89}}, \bibinfo{eid}{083507}
   (\bibinfo{year}{2014}), \eprint{1312.5616}.
 
-\bibitem[{\citenamefont{{Lu} and {Pen}}(2008)}]{2008:lu}
+\bibitem[{\citenamefont{{Lu} and {Pen}}(2008)}]{2008LensingEst}
 \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{{Lu}}} \bibnamefont{and}
   \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
   \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{388}},
   \bibinfo{pages}{1819} (\bibinfo{year}{2008}), \eprint{0710.1108}.
 
+\bibitem[{\citenamefont{{Lu} et~al.}(2010)\citenamefont{{Lu}, {Pen}, and
+  {Dor{\'e}}}}]{2010LensingEst}
+\bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{{Lu}}},
+  \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{O.}~\bibnamefont{{Dor{\'e}}}},
+  \bibinfo{journal}{\prd} \textbf{\bibinfo{volume}{81}}, \bibinfo{eid}{123015}
+  (\bibinfo{year}{2010}), \eprint{0905.0499}.
+
+\bibitem[{\citenamefont{{Bucher} et~al.}(2012)\citenamefont{{Bucher},
+  {Carvalho}, {Moodley}, and {Remazeilles}}}]{2012LensingEst}
+\bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Bucher}}},
+  \bibinfo{author}{\bibfnamefont{C.~S.} \bibnamefont{{Carvalho}}},
+  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{{Moodley}}},
+  \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Remazeilles}}},
+  \bibinfo{journal}{\prd} \textbf{\bibinfo{volume}{85}}, \bibinfo{eid}{043016}
+  (\bibinfo{year}{2012}), \eprint{1004.3285}.
+
+\bibitem[{\citenamefont{{Zhu} et~al.}(2017{\natexlab{a}})\citenamefont{{Zhu},
+  {Yu}, and {Pen}}}]{2017NR2}
+\bibinfo{author}{\bibfnamefont{H.-M.} \bibnamefont{{Zhu}}},
+  \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{{Yu}}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
+  \bibinfo{journal}{ArXiv e-prints}  (\bibinfo{year}{2017}{\natexlab{a}}),
+  \eprint{1711.03218}.
+
+\bibitem[{\citenamefont{{Seljak} et~al.}(2017)\citenamefont{{Seljak},
+  {Aslanyan}, {Feng}, and {Modi}}}]{2017FM}
+\bibinfo{author}{\bibfnamefont{U.}~\bibnamefont{{Seljak}}},
+  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{{Aslanyan}}},
+  \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{{Feng}}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{{Modi}}},
+  \bibinfo{journal}{\jcap} \textbf{\bibinfo{volume}{12}}, \bibinfo{eid}{009}
+  (\bibinfo{year}{2017}), \eprint{1706.06645}.
+
+\bibitem[{\citenamefont{{Schmittfull} et~al.}(2017)\citenamefont{{Schmittfull},
+  {Baldauf}, and {Zaldarriaga}}}]{2017NR3}
+\bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Schmittfull}}},
+  \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{{Baldauf}}},
+  \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Zaldarriaga}}},
+  \bibinfo{journal}{\prd} \textbf{\bibinfo{volume}{96}}, \bibinfo{eid}{023505}
+  (\bibinfo{year}{2017}), \eprint{1704.06634}.
+
 \bibitem[{\citenamefont{{Harnois-D{\'e}raps}
   et~al.}(2013)\citenamefont{{Harnois-D{\'e}raps}, {Pen}, {Iliev}, {Merz},
-  {Emberson}, and {Desjacques}}}]{2013:code}
+  {Emberson}, and {Desjacques}}}]{2013CUBEP3M}
 \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{{Harnois-D{\'e}raps}}},
   \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
   \bibinfo{author}{\bibfnamefont{I.~T.} \bibnamefont{{Iliev}}},
@@ -134,28 +571,21 @@
   \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{436}},
   \bibinfo{pages}{540} (\bibinfo{year}{2013}), \eprint{1208.5098}.
 
-\bibitem[{\citenamefont{{Bandura} et~al.}(2014)}]{2014SPIE.9145E..22B}
-\bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{{Bandura}}}
-  \bibnamefont{et~al.}, in \emph{\bibinfo{booktitle}{Society of Photo-Optical
-  Instrumentation Engineers (SPIE) Conference Series}} (\bibinfo{year}{2014}),
-  vol. \bibinfo{volume}{9145} of \emph{\bibinfo{series}{Society of
-  Photo-Optical Instrumentation Engineers (SPIE) Conference Series}},
-  p.~\bibinfo{pages}{22}, \eprint{1406.2288}.
+\bibitem[{\citenamefont{{Castorina} and {Villaescusa-Navarro}}(2017)}]{2017HI}
+\bibinfo{author}{\bibfnamefont{E.}~\bibnamefont{{Castorina}}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{F.}~\bibnamefont{{Villaescusa-Navarro}}},
+  \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{471}},
+  \bibinfo{pages}{1788} (\bibinfo{year}{2017}), \eprint{1609.05157}.
 
-\bibitem[{\citenamefont{{Xu} et~al.}(2015)\citenamefont{{Xu}, {Wang}, and
-  {Chen}}}]{2015ApJ...798...40X}
-\bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{{Xu}}},
-  \bibinfo{author}{\bibfnamefont{X.}~\bibnamefont{{Wang}}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{X.}~\bibnamefont{{Chen}}},
-  \bibinfo{journal}{\apj} \textbf{\bibinfo{volume}{798}}, \bibinfo{eid}{40}
-  (\bibinfo{year}{2015}), \eprint{1410.7794}.
-
-\bibitem[{HIR()}]{HIRAX}
-\bibinfo{howpublished}{http://www.acru.ukzn.ac.za/~hirax/}.
+\bibitem[{\citenamefont{{White} and {Padmanabhan}}(2017)}]{2017Void}
+\bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{White}}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{{Padmanabhan}}},
+  \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{471}},
+  \bibinfo{pages}{1167} (\bibinfo{year}{2017}), \eprint{1705.09669}.
 
 \bibitem[{\citenamefont{{Masui} et~al.}(2013)\citenamefont{{Masui}, {Switzer},
   {Banavar}, {Bandura}, {Blake}, {Calin}, {Chang}, {Chen}, {Li}, {Liao}
-  et~al.}}]{2013ApJ...763L..20M}
+  et~al.}}]{2013IM}
 \bibinfo{author}{\bibfnamefont{K.~W.} \bibnamefont{{Masui}}},
   \bibinfo{author}{\bibfnamefont{E.~R.} \bibnamefont{{Switzer}}},
   \bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{{Banavar}}},
@@ -172,7 +602,7 @@
 
 \bibitem[{\citenamefont{{Switzer} et~al.}(2013)\citenamefont{{Switzer},
   {Masui}, {Bandura}, {Calin}, {Chang}, {Chen}, {Li}, {Liao}, {Natarajan},
-  {Pen} et~al.}}]{2013MNRAS.434L..46S}
+  {Pen} et~al.}}]{2013IM2}
 \bibinfo{author}{\bibfnamefont{E.~R.} \bibnamefont{{Switzer}}},
   \bibinfo{author}{\bibfnamefont{K.~W.} \bibnamefont{{Masui}}},
   \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{{Bandura}}},
@@ -187,45 +617,68 @@
   \textbf{\bibinfo{volume}{434}}, \bibinfo{pages}{L46} (\bibinfo{year}{2013}),
   \eprint{1304.3712}.
 
-\bibitem[{\citenamefont{{Ade} et~al.}(2015)}]{2015:plancklensing}
-\bibinfo{author}{\bibfnamefont{P.~A.~R.} \bibnamefont{{Ade}}}
-  \bibnamefont{et~al.} (\bibinfo{collaboration}{Planck Collaboration}),
-  \bibinfo{journal}{ArXiv e-prints}  (\bibinfo{year}{2015}),
-  \eprint{1502.01591}.
+\bibitem[{\citenamefont{{Planck Collaboration}
+  et~al.}(2016{\natexlab{b}})\citenamefont{{Planck Collaboration}, {Ade},
+  {Aghanim}, {Arnaud}, {Ashdown}, {Aumont}, {Baccigalupi}, {Banday},
+  {Barreiro}, {Bartlett} et~al.}}]{2016PlanckLensing}
+\bibinfo{author}{\bibnamefont{{Planck Collaboration}}},
+  \bibinfo{author}{\bibfnamefont{P.~A.~R.} \bibnamefont{{Ade}}},
+  \bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{{Aghanim}}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Arnaud}}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Ashdown}}},
+  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{{Aumont}}},
+  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{{Baccigalupi}}},
+  \bibinfo{author}{\bibfnamefont{A.~J.} \bibnamefont{{Banday}}},
+  \bibinfo{author}{\bibfnamefont{R.~B.} \bibnamefont{{Barreiro}}},
+  \bibinfo{author}{\bibfnamefont{J.~G.} \bibnamefont{{Bartlett}}},
+  \bibnamefont{et~al.}, \bibinfo{journal}{\aap} \textbf{\bibinfo{volume}{594}},
+  \bibinfo{eid}{A15} (\bibinfo{year}{2016}{\natexlab{b}}), \eprint{1502.01591}.
 
 \bibitem[{\citenamefont{{Liu} et~al.}(2011)\citenamefont{{Liu}, {Ng}, and
-  {Pen}}}]{2011PhRvD..83f3001L}
+  {Pen}}}]{2011improveISW}
 \bibinfo{author}{\bibfnamefont{G.-C.} \bibnamefont{{Liu}}},
   \bibinfo{author}{\bibfnamefont{K.-W.} \bibnamefont{{Ng}}}, \bibnamefont{and}
   \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
   \bibinfo{journal}{\prd} \textbf{\bibinfo{volume}{83}}, \bibinfo{eid}{063001}
   (\bibinfo{year}{2011}), \eprint{1010.0578}.
 
-\bibitem[{\citenamefont{{Lu} et~al.}(2010)\citenamefont{{Lu}, {Pen}, and
-  {Dor{\'e}}}}]{2010:lu}
-\bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{{Lu}}},
-  \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{O.}~\bibnamefont{{Dor{\'e}}}},
-  \bibinfo{journal}{\prd} \textbf{\bibinfo{volume}{81}}, \bibinfo{eid}{123015}
-  (\bibinfo{year}{2010}), \eprint{0905.0499}.
+\bibitem[{\citenamefont{{Assassi} et~al.}(2017)\citenamefont{{Assassi},
+  {Simonovi{\'c}}, and {Zaldarriaga}}}]{2017Limber}
+\bibinfo{author}{\bibfnamefont{V.}~\bibnamefont{{Assassi}}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Simonovi{\'c}}}},
+  \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Zaldarriaga}}},
+  \bibinfo{journal}{\jcap} \textbf{\bibinfo{volume}{11}}, \bibinfo{eid}{054}
+  (\bibinfo{year}{2017}), \eprint{1705.05022}.
 
-\bibitem[{\citenamefont{{Eisenstein} et~al.}(2007)\citenamefont{{Eisenstein},
-  {Seo}, {Sirko}, and {Spergel}}}]{2007:bao}
-\bibinfo{author}{\bibfnamefont{D.~J.} \bibnamefont{{Eisenstein}}},
-  \bibinfo{author}{\bibfnamefont{H.-J.} \bibnamefont{{Seo}}},
-  \bibinfo{author}{\bibfnamefont{E.}~\bibnamefont{{Sirko}}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{D.~N.} \bibnamefont{{Spergel}}},
-  \bibinfo{journal}{\apj} \textbf{\bibinfo{volume}{664}}, \bibinfo{pages}{675}
-  (\bibinfo{year}{2007}), \eprint{astro-ph/0604362}.
+\bibitem[{\citenamefont{{Schmittfull} and {Seljak}}(2017)}]{2017Limber2}
+\bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Schmittfull}}}
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{U.}~\bibnamefont{{Seljak}}},
+  \bibinfo{journal}{ArXiv e-prints}  (\bibinfo{year}{2017}),
+  \eprint{1710.09465}.
 
-\bibitem[{\citenamefont{{Seo} and {Hirata}}(2016)}]{2015:bao1}
+\bibitem[{\citenamefont{{Hall} et~al.}(2013)\citenamefont{{Hall}, {Bonvin}, and
+  {Challinor}}}]{2013GRSignal}
+\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Hall}}},
+  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{{Bonvin}}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Challinor}}},
+  \bibinfo{journal}{\prd} \textbf{\bibinfo{volume}{87}}, \bibinfo{eid}{064026}
+  (\bibinfo{year}{2013}), \eprint{1212.0728}.
+
+\bibitem[{\citenamefont{{Hall} and {Bonvin}}(2017)}]{2017GRSignal}
+\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Hall}}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{{Bonvin}}},
+  \bibinfo{journal}{\prd} \textbf{\bibinfo{volume}{95}}, \bibinfo{eid}{043530}
+  (\bibinfo{year}{2017}), \eprint{1609.09252}.
+
+\bibitem[{\citenamefont{{Seo} and {Hirata}}(2016)}]{2016BAO}
 \bibinfo{author}{\bibfnamefont{H.-J.} \bibnamefont{{Seo}}} \bibnamefont{and}
   \bibinfo{author}{\bibfnamefont{C.~M.} \bibnamefont{{Hirata}}},
   \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{456}},
   \bibinfo{pages}{3142} (\bibinfo{year}{2016}), \eprint{1508.06503}.
 
 \bibitem[{\citenamefont{{Cohn} et~al.}(2016)\citenamefont{{Cohn}, {White},
-  {Chang}, {Holder}, {Padmanabhan}, and {Dor{\'e}}}}]{2015:bao2}
+  {Chang}, {Holder}, {Padmanabhan}, and {Dor{\'e}}}}]{2016Combine}
 \bibinfo{author}{\bibfnamefont{J.~D.} \bibnamefont{{Cohn}}},
   \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{White}}},
   \bibinfo{author}{\bibfnamefont{T.-C.} \bibnamefont{{Chang}}},
@@ -236,9 +689,36 @@
   \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{457}},
   \bibinfo{pages}{2068} (\bibinfo{year}{2016}), \eprint{1511.07377}.
 
-\bibitem[{\citenamefont{{Alvarez}}(2015)}]{2015:marcelo}
+\bibitem[{\citenamefont{{Obuljen} et~al.}(2017)\citenamefont{{Obuljen},
+  {Villaescusa-Navarro}, {Castorina}, and {Viel}}}]{2017BAO}
+\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Obuljen}}},
+  \bibinfo{author}{\bibfnamefont{F.}~\bibnamefont{{Villaescusa-Navarro}}},
+  \bibinfo{author}{\bibfnamefont{E.}~\bibnamefont{{Castorina}}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Viel}}},
+  \bibinfo{journal}{\jcap} \textbf{\bibinfo{volume}{9}}, \bibinfo{eid}{012}
+  (\bibinfo{year}{2017}), \eprint{1610.05768}.
+
+\bibitem[{\citenamefont{{Zhu} et~al.}(2016{\natexlab{b}})\citenamefont{{Zhu},
+  {Pen}, and {Chen}}}]{2016NR}
+\bibinfo{author}{\bibfnamefont{H.-M.} \bibnamefont{{Zhu}}},
+  \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{X.}~\bibnamefont{{Chen}}},
+  \bibinfo{journal}{ArXiv e-prints}  (\bibinfo{year}{2016}{\natexlab{b}}),
+  \eprint{1609.07041}.
+
+\bibitem[{\citenamefont{{Zhu} et~al.}(2017{\natexlab{b}})\citenamefont{{Zhu},
+  {Yu}, {Pen}, {Chen}, and {Yu}}}]{2017NR}
+\bibinfo{author}{\bibfnamefont{H.-M.} \bibnamefont{{Zhu}}},
+  \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{{Yu}}},
+  \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
+  \bibinfo{author}{\bibfnamefont{X.}~\bibnamefont{{Chen}}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{H.-R.} \bibnamefont{{Yu}}},
+  \bibinfo{journal}{\prd} \textbf{\bibinfo{volume}{96}}, \bibinfo{eid}{123502}
+  (\bibinfo{year}{2017}{\natexlab{b}}), \eprint{1611.09638}.
+
+\bibitem[{\citenamefont{{Alvarez}}(2016)}]{2016kSZ}
 \bibinfo{author}{\bibfnamefont{M.~A.} \bibnamefont{{Alvarez}}},
-  \bibinfo{journal}{ArXiv e-prints}  (\bibinfo{year}{2015}),
-  \eprint{1511.02846}.
+  \bibinfo{journal}{\apj} \textbf{\bibinfo{volume}{824}}, \bibinfo{eid}{118}
+  (\bibinfo{year}{2016}), \eprint{1511.02846}.
 
 \end{thebibliography}

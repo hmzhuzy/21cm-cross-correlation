@@ -1,37 +1,40 @@
-\documentclass[aps,prl,twocolumn,showpacs,superscriptaddress,groupedaddress,nofootinbib,floatfix]{revtex4}  % for review and submission
-%\documentclass[aps,preprint,showpacs,superscriptaddress,groupedaddress]{revtex4}  % for double-spaced preprint
-\usepackage{graphicx}  % needed for figures
-\usepackage{dcolumn}   % needed for some tables
-\usepackage{bm}        % for math
-\usepackage{amsmath,amssymb}   % for math
+\documentclass[prd,superscriptaddress,floatfix,notitlepage,nofootinbib,reprint]{revtex4-1} 
+
+\usepackage{graphicx}  
+\usepackage{dcolumn}   
+\usepackage{bm}        
+\usepackage{amsmath,amssymb}
 \usepackage{aas_macros}
 \usepackage{multirow}
 \usepackage{color}
 \usepackage{verbatim}
-\usepackage{times}
 \usepackage{url}
 \usepackage{hyperref}
 
-% avoids incorrect hyphenation, added Nov/08 by SSR
 \hyphenation{ALPGEN}
 \hyphenation{EVTGEN}
 \hyphenation{PYTHIA}
 
 \newcommand{\mr}{\mathrm}
-\newcommand{\tcb}{\textcolor{blue}}
-
+\newcommand{\kpa}{k_\parallel}
+\newcommand{\kpe}{k_\perp}
+\newcommand{\bmk}{\bm{k}}
+\newcommand{\bmx}{\bm{x}}
+\newcommand{\bea}{\begin{equation}}
+\newcommand{\eea}{\end{equation}}
 
 \begin{document}
-% The following information is for internal review, please remove them for submission
 \widetext
-% the following line is for submission, including submission to the arXiv!!
-%\hspace{5.2in} \mbox{Fermilab-Pub-04/xxx-E}
 
-\title{Recovering Lost 21cm Radial Modes via Cosmic Tidal Reconstruction}
+\title{Recovering lost 21-cm radial modes for cross correlation with the CMB and
+photo-$z$ galaxies via cosmic tidal reconstruction}
 
 \author{Hong-Ming Zhu}
+\email[]{hmzhu@berkeley.edu}
 \affiliation{Key Laboratory for Computational Astrophysics, National Astronomical Observatories, Chinese Academy of Sciences, 20A Datun Road, Beijing 100012, China}
 \affiliation{University of Chinese Academy of Sciences, Beijing 100049, China}
+\affiliation{Berkeley Center for Cosmological Physics and Department of Physics,
+University of California, Berkeley, California 94720, USA}
 
 \author{Ue-Li Pen} 
 \affiliation{Canadian Institute for Theoretical Astrophysics, University of Toronto, 60 St. George Street, Toronto, Ontario M5S 3H8, Canada}
@@ -40,9 +43,7 @@
 \affiliation{Perimeter Institute for Theoretical Physics, 31 Caroline Street North, Waterloo, Ontario, N2L 2Y5, Canada}
 
 \author{Yu Yu}
-\affiliation{Key Laboratory for Research in Galaxies and Cosmology,
-Shanghai Astronomical Observatory, Chinese Academy of Sciences,
-80 Nandan Road, Shanghai 200030, China}
+\affiliation{Department of Astronomy, Shanghai Jiao Tong University, 800 Dongchuan Road, Shanghai 200240, China}
 
 \author{Xuelei Chen}
 \affiliation{Key Laboratory for Computational Astrophysics,  National Astronomical Observatories, Chinese Academy of Sciences, 20A Datun Road, Beijing 100012, China}
@@ -51,285 +52,558 @@ Shanghai Astronomical Observatory, Chinese Academy of Sciences,
 \date{\today}
 
 \begin{abstract}
-21 cm intensity mapping has emerged as a promising technique to map the 
+21-cm intensity mapping has emerged as a promising technique to map the 
 large-scale structure of the Universe, at redshifts $z$ from 1 to 10.
-Unfortunately, many of the key cross correlations with photo-$z$ galaxies
-and the CMB have been thought to be impossible due to foreground
-contamination for radial modes with small wavenumbers. 
-These modes are usually subtracted in the foreground subtraction process.
-We recover the lost 21 cm radial modes via cosmic tidal reconstruction and 
-find more than 60\% cross-correlation signal at $\ell\lesssim100$ and 
-even more on larger scales can be recovered from null. 
-The tidal reconstruction method opens up a new set of possibilities to 
-probe our Universe and is extremely valuable not only for 21 cm surveys
-but also for CMB and photometric redshift observations.
+Unfortunately, many of the key cross correlations with the cosmic microwave 
+background and photo-$z$ galaxies have been thought to be impossible due to 
+foreground contamination for radial modes with small wave numbers. 
+In this paper, we apply tidal reconstruction to the simulated 21-cm fields
+and recover the lost large-scale radial modes successfully.
+We estimate the detectability of the cross correlation signals and find them
+can be detected at high significance.
+The tidal field reconstruction method opens up a new set of possibilities to 
+probe the Universe and is extremely valuable not only for 21-cm surveys
+but also for cosmic microwave background and photometric redshift observations.
 \end{abstract}
 
-\pacs{}
 \maketitle
 
-%\section{\label{sec:level1}First-level heading}
-% sections are not used for PRL papers
+\section{Introduction}
+The current and future cosmic surveys aim to map a large fraction of the 
+Universe with unprecedented precision by observing the large-scale structure 
+(e.g. SDSS \cite{2017SDSS}, DES \cite{2016DES}, PFS \cite{2014PFS}, DESI 
+\cite{2016DESI}, LSST \cite{2009LSST}, Euclid \cite{2012Euclid}) and the cosmic
+microwave background (CMB) (e.g. Planck \cite{2016Planck}, SPT-3G \cite{2014SPT-3G}, Advanced ACTPol \cite{2016AdvACTPol}, CMB-S4 \cite{2016CMB-S4}). 
+Precision measurements of cosmological parameters from the autocorrelations
+of large-scale structure and CMB observations and the cross correlations 
+between different observations can improve constraints on the properties of 
+dark energy, modifications to general relativity, neutrino masses, and 
+primordial non-Gaussianities substantially.
+In addition to these observation methods, 21-cm  intensity mapping has 
+emerged as a powerful method to map the large-scale structure of the Universe 
+\cite{2008IM,2008IM2,2010IM}. 
+Instead of resolving millions of individual galaxies, the 21-cm intensity 
+mapping technique measures the large-scale structure by detecting the aggregate 21-cm emission of neutral hydrogen from many galaxies in large voxels. 
+The redshifted 21-cm emission line which provides the redshift information can 
+be resolved exquisitely in the frequency domain.
+Therefore, this allows radio telescopes to conduct rapid and efficient surveys
+of large volumes of the Universe.
+The ongoing and upcoming 21-cm surveys including CHIME \cite{2014CHIME}, HIRAX 
+\cite{2016HIRAX}, Tianlai \cite{2015Tianlai}, BINGO \cite{2013BINGO}, FAST 
+\cite{2016FAST}, MeerKAT \cite{2017MeerKAT}, and SKA \cite{2015SKA} can improve 
+the baryon acoustic oscillations (BAO) measurements by observing a larger cosmic
+volume at higher redshifts compared to current galaxy surveys.
 
-{\it Introduction.}---The current and future cosmological observations aim
-to map a large fraction of the Universe with unprecedent precision, varying
-from LSST \cite{2009:lsst}, Euclid \cite{2012:euclid}, 
-Planck \cite{2015arXiv150201582P}, CMB-S4 \cite{2014ApJ...788..138W}, and etc. 
-In addition to these ones, 21 cm intensity mapping has emerged as
-a powerful probe of the 
-cosmological large-scale structure \cite{2008:21cm,chang}.
-However, the astrophysical foregrounds from galactic and extra-galactic
-synchrotron and free-free emissions are stronger than the cosmological 21 cm 
-signals by many orders of magnitude. These foregrounds are expected to be 
-spectrally smooth, which means they would contaminate small radial
-modes, i.e., all modes with low $k_\parallel$.
-While there are not many modes with small $k_\parallel$, many other cosmic
-observations with broad window functions along the radial direction only 
-probe these modes, such as weak lensing, photo-$z$ galaxies, 
-integrated Sachs-Wolf effect, kinetic Sunyaev-Zel'dovich effect, and etc.  
-Thus, 
-%this makes it very hard to cross correlate these cosmic probes with 
-%21 cm intensity mapping surveys 
-the cross correlations of 21 cm surveys with these cosmic probes are dominated 
-by foreground contamination \cite{2007ApJ...660.1030F,2008MNRAS.384..291A}. 
-To solve this problem is of great importance for both 21 cm 
-intensity mapping surveys and other key cosmic surveys.
+The primary challenge for 21-cm intensity mapping experiments is the presence
+of the astrophysical foregrounds from galactic and extra-galactic synchrotron 
+emissions, which are three orders of magnitude brighter than the cosmological
+21-cm signals. 
+The synchrotron foregrounds are known to be spectrally smooth in the frequency
+domain where the redshifted 21-cm signals from different redshifts fluctuate at 
+different frequencies.
+In principle, the foregrounds only impact the long wavelength density 
+fluctuations along the line of sight, i.e., the modes with small $\kpa$ in 
+Fourier space \cite{2003FG,2006FG}. 
+However, the instrumental effects (e.g. spectral response, calibration, etc) 
+further lead to an unsmooth foreground component, often referred as the 
+foreground wedge at the low $\kpa$ and high $\kpe$ area in Fourier space 
+\cite{2010Wedge,2012Wedge,2012Wedge2,2013Wedge,2015Wedge}.
+The synchrotron foregrounds can be cleaned by exploiting their smooth spectral 
+structure \cite{2011FG,2012FG,2014FG,2015FG}.
+As demonstrated in Ref. \cite{2015FG}, the foregrounds can be cleaned well 
+below the foreground wedge with the precise calibration of the instrument, 
+leaving only $\kpa<0.02\ h\mr{Mpc}^{-1}$ modes unaccessible.
 
-Recently a new method called {\it cosmic tidal reconstruction} has been 
-developed \cite{2012:pen,2015:zhu}. It can reconstruct the large-scale 
-tidal field and hence large-scale density field from the alignment of 
-small-scale cosmic structures.
-The modes with small $k_\parallel$ and large $k_\perp$ are well 
-reconstructed \cite{2015:zhu}, which are exactly those lost in the foreground 
-subtraction in 21 cm experiments. 
-This technique enables the reconstruction of small radial modes, 
-which provides important radial information essential for cross correlating 
-with CMB and other cosmic probes.
+However, while there are not many Fourier modes at $\kpa<0.02\ h\mr{Mpc}^{-1}$, 
+many other cosmological observations such as weak lensing, photometric-redshift
+galaxies, and integrated Sachs-Wolf (ISW) effect can only probe these modes.
+These observations involve a broad window function along the line of sight and
+measure the projected modes, i.e., the modes with small $\kpa$, which are all
+contaminated by the foreground emissions in 21-cm intensity mapping 
+observations.
+Therefore, the proposed cross correlation of 21-cm intensity mapping with weak
+gravitational lensing \cite{2015xLensing&Photoz,2016xLensing,2016xLensing2}, 
+photo-$z$ galaxies \cite{2015xLensing&Photoz,2015xPhotoz,2015xPhotoz2,2017xPhotoz,2017xPhotoz&ISW,2017xPhotoz2}, and ISW effect \cite{2017xPhotoz&ISW} would 
+be severely degraded in the presence of foregrounds.
+Recovering the lost large-scale radial modes for cross correlations is thus 
+crucial in order to fully exploit the 21-cm intensity mapping experiments.
+The cross-correlation measurements will benefit other observations as well,
+since the cross correlations are expected to be more robust to the systematics
+than autocorrelations from individual experiments. 
+It also enables the use of sample variance cancellation technique \cite{2009MT}
+to measure cosmological parameters \cite{2015xPhotoz,2015xPhotoz2,2017xPhotoz}.
 
-%which are essential for CMB and other cross correlations.
+Recently a new method called cosmic tidal reconstruction has been developed
+\cite{2012Tides,2016Tides}. 
+The small-scale density fluctuations are significantly affected by the 
+large-scale density field as a consequence of nonlinear mode coupling.
+The large-scale tidal shear field causes anisotropic distortions of the locally
+measured small-scale matter power spectrum. 
+Such local anisotropic tidal distortions can be exploited to reconstruct the 
+large-scale tidal shear and hence density fields.
+The reconstruction of gravitational tidal shear from local small-scale matter 
+power spectrum is described by the same formulation as the reconstruction of 
+gravitational lensing induced shear. 
+As shown in Ref. \cite{2016Tides}, the density modes with small $\kpa$ 
+and large $\kpe$ are well reconstructed, with cross-correlation coefficient
+close to $1$ for reconstruction with the full dark matter density field.
+These reconstructed density modes are exactly those lost in the foreground 
+subtraction of 21-cm experiments. 
+The tidal reconstruction technique enables the reconstruction of lost 21-cm 
+radial modes, which provides important radial information essential for cross 
+correlating with the CMB and photometric observations.
 
-In this Letter we study how to use cosmic tidal reconstruction to 
-reconstruct the lost large-scale radial modes, and further cross correlate with
-CMB lensing, photo-$z$ galaxies and ISW effect. 
-We find such reconstruction technique recovers more than 60\% cross-correlation 
-signal at $\ell\lesssim100$ from nothing and even better on larger scales. 
-This provides a new way to probe the origin and evolution of the Universe.
+In this paper, we apply cosmic tidal reconstruction to the simulated 21-cm 
+field with low $\kpa$ foreground modes subtracted. The small $\kpa$ radial 
+modes are recovered successfully after tidal reconstruction.
+Then we cross correlate the reconstructed 21-cm field with the simulated CMB 
+lensing, photo-$z$ galaxy and ISW effect fields and estimate the detectability
+of the cross-correlation signals with the current 21-cm experiments.
+The tidal field reconstruction method provides us a new way to study the 
+large-scale matter distribution in the Universe through cross correlations 
+and has profound implications for the current and future 21-cm experiments.
 
-{\it Cosmic tidal reconstruction.}---Cosmic tides is a new way to view the
-tidal effect of gravity on the structure of matter clustering \cite{2012:pen}.
+The paper is organized as follows.
+In Sec. \ref{sec:rec}, we introduce the cosmic tidal reconstruction.
+In Sec. \ref{sec:sim}, we apply tidal field reconstruction to the simulated 
+foreground subtracted 21-cm density field and shows the reconstruction results.
+Section \ref{sec:ccs} shows the cross-correlation signal recovered after
+reconstruction and estimates the detectability with current 21-cm experiments.
+We discuss further improvements and future applications in Sec. \ref{sec:dis} 
+and conclude in Sec. \ref{sec:cls}.
+
+
+\section{Cosmic tidal reconstruction}
+\label{sec:rec}
 The large-scale density field can be reconstructed accurately from the 
 anisotropic tidal distortions of the locally-measured matter power spectrum
-\cite{2012:pen,2015:zhu}.
-The basic idea of purely transverse tidal reconstruction has been proposed in
-Ref. \cite{2012:pen} and further expanded in Ref. \cite{2015:zhu}.
-Here, we briefly discuss the idea and summarize the process of cosmic
-tidal reconstruction. 
+\cite{2012Tides,2016Tides}.
+The basic idea of purely transverse tidal reconstruction has been proposed in 
+Ref. \cite{2012Tides} and further expanded in Ref. \cite{2016Tides}.
+In this section, we briefly discuss the physical idea and outline the 
+operational procedure of the tidal field reconstruction. More details of this 
+reconstruction method are presented in Ref. \cite{2016Tides}.
 
-The evolution of small-scale density perturbations is modulated by 
-long-wavelength perturbations \cite{2014:tidal}. 
-The anisotropic distortions in the local small-scale matter power specturm,
-$\propto\hat{k}^i\hat{k}^jt_{ij}^{(0)}$, arise from the coupling of small-scale
-density fluctuations with the large-scale tidal field $t_{ij}$, where 
-$t_{ij}=\Phi_{L,ij}-\delta_{ij}\nabla^2\Phi_L/3$, $\hat{\ }$ denotes the 
-unit vector and superscript (0) denotes some ``initial'' time. 
-The traceless tidal field $t_{ij}$ can be decomposed into 5 independently 
-observable components \cite{2015:zhu}.
-The two transverse shear terms, 
-$\gamma_1=(\Phi_{L,11}-\Phi_{L,22})/2$ and $\gamma_2=\Phi_{L,12}$,
-which describe quadrupolar distortions in the tangential plane perpendicular
-to the line of sight, are less affected by peculiar velocities and used to 
-perform reconstruction \cite{2015:zhu}.
-%Since 
-%Here, $\gamma_1=(\Phi_{L,11}-\Phi_{L,22})/2$ and $\gamma_2=\Phi_{L,12}$
-%only involves derivatives in the tangential plane, the changes in $\gamma_1$
-%and $\gamma_2$ due to the redshift space distortions are expected to be second
-%order effects. 
-The two gravitational tidal shear fields $\gamma_1$ and $\gamma_2$
-can be converted to the two-dimensional (2D) convergence field, 
-$\kappa_\mr{2D}=(\Phi_{L,11}+\Phi_{L,22})/2$, using
-\begin{eqnarray}
-\label{eq:kappa2d}
-\kappa_{\mr{2D},11}+\kappa_{\mr{2D},22}=
-(\gamma_{1,11}-\gamma_{1,22}+2\gamma_{2,12}).
-\end{eqnarray}
-The three-dimensional (3D) convergence $\kappa_\mr{3D}=\nabla^2\Phi_L/3\propto\delta_L$, which gives
-the large-scale density field, is given by 
-\begin{eqnarray}
-\label{eq:kappa3d}
-\kappa_{\mr{3D},11}+\kappa_{\mr{3D},22}=\frac{2}{3}\nabla^2\kappa_\mr{2D}.
-\end{eqnarray}
-Since only two transverse tidal shear fields $\gamma_1(\bm{x})$ and 
-$\gamma_2(\bm{x})$ are used, the changes of the large-scale density field along
-the line of sight are inferred from the variations of $\gamma_1$ and $\gamma_2$
-along the $x_\parallel$ axis. The error of $\kappa_\mr{3D}$ is 
-\begin{eqnarray}
-\sigma_{\kappa_\mr{3D}}(\bm{k})\propto\big({k^2}/{k_\perp^2}\big)^2,
-\end{eqnarray}
-which is anisotropic in $k_\perp$ and $k_\parallel$ \cite{2015:zhu}.
-The reconstruction works best for modes with low $k_\parallel$ and high 
-$k_\perp$, which can not be obtained from 21 cm surveys and contribute 
-substantially to cosmological observables from other surveys mentioned above.
-Thus, cosmic tidal reconstruction provides a new way to recover the lost 
-radial modes and to improve the cross correlations.
+\subsection{Cosmic tides}
 
-The tidal reconstrction works as follows. The first step is to convolve
-the density field with a Gaussian kernel, $S(\bm{k})=e^{-k^2R^2/2}$, which
-filters out the small-scale nonlinear structures.
-Here, we still take $R=1.25\ \mr{Mpc}/h$ \cite{2012:pen,2015:zhu}. The
-next step is to gaussianize the smoothed density field by taking a logarithmic
-transform or mapping the density fluctuations into a Gaussian distribution. 
-In the following reconstructions, we adopt the latter method since after the
-simulated
-foreground subtraction, some of the density contrasts become smaller than $-1$,
+The evolution of small-scale density perturbations is modulated by long 
+wavelength perturbations during nonlinear structure formation. 
+The gravitational coupling of a long wavelength tidal field with small-scale
+density fluctuations has been studied extensively \cite{2014Tides}.
+The leading-order observable of a long wavelength density perturbation on 
+small-scale density perturbations is described by the large-scale tidal field,
+\bea    
+t_{ij}=\Phi_{L,ij}-\delta_{ij}\Phi_{L,kk}/3,
+\eea
+where $\Phi_L$ is the long wavelength gravitational potential sourced by the 
+long wavelength density perturbation $\delta_L$. Here $\Phi_{L,ij}$ denotes
+partial derivatives of $\Phi_L$ to $x^i$ and $x^j$.
+Note that we have projected out the trace of $\Phi_{L,ij}$, which corresponds 
+to the local mean density.
+Since the change of shape is more robust than the change of number density, we 
+shall focus on the gravitational tidal shear, i.e., the traceless tidal field.
+The locally observed matter power spectrum in the presence of the large-scale
+tidal field $t_{ij}$ can be calculated using Lagrangian perturbation theory 
+and is given by
+\bea
+\label{eq:pk}
+P(\bmk,\tau)|_{t_{ij}}=P(k,\tau)+\hat{k}^i\hat{k}^jt^{(0)}_{ij}P(k,\tau)f(k,\tau),
+\eea
+where $\tau$ is the conformal time, $P(k,\tau)$ is the isotropic linear power 
+spectrum, $\hat{\bmk}$ is the unit vector, the superscript $(0)$ denotes the 
+initial time defined in perturbation calculation. 
+The coupling of the large-scale tidal field to small-scale density fluctuations
+is described by the tidal coupling coefficient
+\bea
+f(k,\tau)=2\alpha(\tau)-\beta(\tau)\frac{d\:\mr{ln}\:P(k,\tau)}{d\:\mr{ln}\:k},
+\eea
+where $\alpha(\tau)$ and $\beta(\tau)$ are integrals involving background cosmological parameters and can be computed numerically \cite{2014Tides, 2016Tides}.
+The above result only includes the leading order effect of the coupling between
+the large-scale tidal field and small-scale density fluctuations. 
+In reality the density field is quite nonlinear and involves all higher order 
+interactions. 
+The reconstructed density field would be biased when the theoretical description
+of the nonlinear coupling in the above equation is not accurate.
+This problem can be addressed using the transfer function calibrated from 
+simulations \cite{2016Tides}. 
+
+The traceless tidal tensor $t_{ij}$ can be decomposed into five independently 
+observable components ($\gamma_1$, $\gamma_2$, $\gamma_x$, $\gamma_y$, 
+$\gamma_z$) \cite{2016Tides}.
+We notice that the two transverse shear terms, 
+\bea
+\gamma_1=(\Phi_{L,11}-\Phi_{L,22})/2,\ \gamma_2=\Phi_{L,12},
+\eea
+which describe quadrupolar distortions in the tangential plane perpendicular 
+to the line of sight, are less affected by peculiar velocities.
+Thus, in the following computation we shall use them to perform reconstruction.
+Once we have the tidal shear terms $\gamma_1$ and $\gamma_2$, the reconstructed
+density field can be obtained by
+\bea
+\label{eq:rec}
+\delta_r(\bmk)=\frac{Ak^2}{(k_1^2+k_2^2)^2}\bigg[(k_1^2-k_2^2)\gamma_1(\bmk)+2k_1k_2\gamma_2(\bmk)\bigg],
+\eea
+where $A$ is the normalization coefficient.
+Since we only use two transverse tidal shear fields $\gamma_1$ and $\gamma_2$
+for reconstruction, the change of the large-scale density field along the line 
+of sight is inferred from the variations of $\gamma_1$ and $\gamma_2$ along 
+the $z$-axis. 
+The noise for the reconstructed density field is anisotropic in Fourier space.
+The tidal reconstruction technique works best for modes in the high $\kpe$ 
+and low $\kpa$ region, which can not be obtained from 21-cm surveys directly 
+but contribute substantially to observables from other cosmological observations
+as discussed above. Cosmic tidal reconstruction provides a new possible way 
+to recover the lost radial modes and to improve the cross-correlation signals.
+
+\subsection{Reconstruction algorithm}
+In this subsection, we describe the tidal reconstruction method used in the 
+next section.
+
+\subsubsection{Reducing nonlinearities}
+
+The first step is to smooth the nonlinear density field with a Gaussian kernel, 
+\bea
+\delta_R(\bmk)=W_R(\bmk)\delta(\bmk),
+\eea
+where 
+\bea
+W_R(\bm{k})=\mr{exp}(-k^2R^2/2),
+\eea
+which filters out small-scale structures.
+The perturbative description of tidal coupling in Eq. (\ref{eq:pk}) is not valid
+in the strong non-Gaussian regions. 
+We need to smooth small-scale nonlinear structures to reduce nonlinearities.
+Here, we take $R=1.25\ \mr{Mpc}/h$, which is close to the optimal filter scale
+as demonstrated in Refs. \cite{2012Tides,2016Tides}.  
+
+The second step is to gaussianize the smoothed density field by taking a 
+logarithmic transform or mapping the density fluctuations into a Gaussian 
+distribution according to their density values. 
+We shall use the latter method since after the simulated 21-cm foreground 
+subtraction process, some of the density contrasts become smaller than $-1$,
 which makes it hard to take the logarithmic transform, $\mathrm{ln}(1+\delta)$.
-The gravitational tidal shear fields can be estimated by applying quadratic 
-tidal shear estimators $\hat{\gamma}_1$ and $\hat{\gamma}_2$ to the density 
-field as in 21 cm lensing reconstruction \cite{2008:lu}. 
-Then the 3D tidal convergence field $\kappa_\mr{3D}$ is given by the linear 
-combination of tidal shear fields using Eq. (\ref{eq:kappa2d}) and 
-Eq. (\ref{eq:kappa3d}).
-The reconstructed noisy field $\kappa_\mr{3D}$ is related to the original 
-density field as 
-\begin{eqnarray}
-\kappa_\mr{3D}(k_\perp,k_\parallel)=b(k_\perp,k_\parallel)
-\delta(k_\perp,k_\parallel)+n(k_\perp,k_\parallel),
-\end{eqnarray}
-where $b=P_{\kappa_\mr{3D}\delta}/P_{\delta}$ is the bias factor and $n$ is 
-the noise of reconstruction \cite{2015:zhu}. 
-The reconstructed clean field is given by 
-\begin{eqnarray}
-\label{eq:kapc}
-\hat{\kappa}_c=({\kappa_\mr{3D}}/{b})W,
-\end{eqnarray}
-where the Wiener filter $W(k_\perp,k_\parallel)=
-P_\delta/(P_{\kappa_\mr{3d}}/b^2)$.
 
-{\it Simulation setup.}---We further explore this idea with numerical 
-simulations. We employ an ensemble of six $N$-body simulations from the
-$\mr{CUBEP}^3\mr{M}$ code \cite{2013:code}. 
-Each simulation includes $1024^3$ particles in a $(1.2\mr{Gpc}/h)^3$ box. 
-%with following cosmological parameters: Hubble parameter $h=0.678$, baryon
-%density $\Omega_{b}=0.049$, dark matter density $\Omega_{c}=0.259$,
-%amplitude of primordial curvature power spectrum $A_s=2.139\times10^{-9}$ at 
-%$k_0=0.05\;\mr{Mpc}^{-1}$ and scalar spectral index $n_s=0.968$.
-In the following analysis we use outputs at $z=1$.
+\subsubsection{Estimating tidal shear fields}
+
+The coupling of the large-scale tidal field and small-scale density fluctuations
+leads to a local anisotropy of quadratic statistics.
+The tidal shear fields can be reconstructed by applying quadratic estimators to
+the Gaussianized density field $\delta_g$ as
+\begin{eqnarray}
+&&\hat{\gamma}_1(\bmx)=\big[\delta_g^{w_1}(\bmx)\delta_g^{w_1}(\bmx)+
+\delta_g^{w_2}(\bmx)\delta_g^{w_2}(\bmx)\big]/2, \nonumber \\
+&&\hat{\gamma}_2(\bmx)=\big[\delta_g^{w_1}(\bmx)\delta_g^{w_2}(\bmx)\big],
+\end{eqnarray}
+where 
+\bea    
+\delta_g^{w_1}(\bmk)=i\hat{k}_1w(\bmk)\delta_g(\bmk),\ 
+\delta_g^{w_2}(\bmk)=i\hat{k}_2w(\bmk)\delta_g(\bmk),
+\eea
+and the filter is
+\bea
+w(\bmk)=\frac{\sqrt{P(\bmk)f(\bmk)}}{P_\mr{tot}(\bmk)},
+\eea
+Here, $P_\mr{tot}(\bmk)$ is the total power spectrum of
+the 21-cm density field which includes both the signal and noise.
+The reconstruction of tidal shear fields is similar to the reconstruction of
+lensing shear fields from 21-cm temperature fields.
+The quadratic estimators presented above can be constructed using either 
+the maximum likelihood method or the inverse variance weighting 
+\cite{2008LensingEst,2010LensingEst,2012LensingEst}.
+
+\subsubsection{Generating the density field}
+
+After we get the tidal shear fields $\gamma_1$ and $\gamma_2$, the tidal 
+reconstructed density field is given by Eq. (\ref{eq:rec}).
+In general, the reconstructed field $\delta_r(\bmk)$ can be written as
+\bea
+\delta_r(\bmk)=C(\bmk)\delta(\bmk)+N(\bmk),
+\eea
+where $C(\bmk)=P_{\delta_r\delta}(\bmk)/P_{\delta}(\bmk)$, $\delta(\bmk)$ is 
+the original  matter density field and $N(\bmk)$ includes the noises from
+21-cm observation and from reconstruction. 
+The factor $C(\bmk)$, often referred as the propagator, quantifies how much 
+information of the original density distribution is reconstructed.
+To get an unbiased measurement of the original density field, we can deconvolve 
+the propagator $C(\bmk)$ from the reconstructed field,
+\bea
+\label{eq:delta}
+\hat{\delta}_r=\delta_r(\bmk)/C(\bmk)=\delta(\bmk)+N(\bmk)/C(\bmk).
+\eea
+This factor can be computed by performing reconstruction with the simulated
+observation mock data \cite{2017NR2,2017FM,2017NR3}. 
+
+
+\section{Implementation and results}
+\label{sec:sim}
+
+To test the performance of reconstruction, we run an ensemble of six $N$-body
+simulations with the ${\tt CUBEP^3M}$ code \cite{2013CUBEP3M}. 
+Each simulation involves $1024^3$ dark matter particles in a cubic box of side
+length $1200\ \mr{Mpc}/h$. 
+We use the snapshot at redshift $z=1$ and generate the dark matter density 
+field on a $1024^3$ grid.
+We could approximately use the dark matter density to represent the 21-cm 
+source distribution, i.e., the neutral hydrogen.
+This is a good approximation since the neutral hydrogen traces the total mass
+distribution fairly well at low redshifts (see Refs. \cite{2017HI,2017Void}
+for more discussions about the modeling of neutral hydrogen in the Universe).
+
+There are several noises for 21-cm experiments we need to consider to model
+the observed 21-cm signal from intensity mapping observations, including the 
+astrophysical foreground, the receiver noise, and the shortest baseline for 
+inteferometers.
+
+A detailed 21-cm foreground subtraction simulation is beyond the scope of this 
+paper. Instead we simply use a high-pass filter along the line of sight,
+\bea
+W_{\mr{fs}}(\kpa)=1-e^{-\kpa^2R_\mr{fs}^2/2},
+\eea
+which removes the small $\kpa$ density modes, to simulate the loss of modes due
+to foreground contamination. 
+We use the two different foreground scales $R_\mr{fs}=60\ \mr{Mpc}/h$ and 
+$15\ \mr{Mpc}/h$ in reconstruction, which give $W_{\mr{fs}}=0.5$ at 
+$\kpa=0.02\ h\mr{Mpc}^{-1}$ and $0.08\ h\mr{Mpc}^{-1}$, respectively. 
+The former is an optimal case, i.e., we only loss modes with 
+$\kpa\lesssim0.02\ h\mr{Mpc}^{-1}$ \cite{2015FG}, while the latter is already 
+achieved in the current 21-cm observations \cite{2013IM,2013IM2}.
+
+For 21-cm observations around redshift $z=1$, the resolution of small-scale
+structures is mainly determined by the thermal noise.
+The thermal noise power $P_N$ is about $150-600\ (\mr{Mpc}/h)^3$ for a 
+HIRAX-like interferometer, depending on the neutral hydrogen fraction and bias
+\cite{2017Void}.
+We assume the experimental noise to be zero above a cut off scale and infinity 
+below this scale.
+We choose it to be $k_N=0.6\ h\mr{Mpc}^{-1}$, which is about the scale 
+where the thermal noise power dominates over the matter power spectrum.
+The effect of the experimental noise can be modeled by applying a step function
+\begin{displaymath}
+\Theta(k_N-k)=\left\{
+    \begin{array}{ll}
+        1,& k\leq k_N  \\
+        0,& k> k_N
+    \end{array}\right.,
+\end{displaymath}
+to the dark matter density field from the simulation.
+
+Most current 21-cm intensity mapping experiments are carried on interferometers.
+The largest angular scale can be probed is decided by the shortest baseline of
+the interferometer. 
+We also using a step function
+\begin{displaymath}
+    \Theta(\ell-\ell_s)=\left\{
+    \begin{array}{ll}
+        1,& \ell\geq\ell_s  \\
+        0,& \ell<\ell_s 
+    \end{array}\right.,
+\end{displaymath}
+to model this effect, where the largest scale can be probed is $\ell_s=115$
+or $\kpe=0.05\ h/\mr{Mpc}$ at redshift $z=1$.
+This corresponds to a shortest baseline of $\sim7\ \mr{m}$.
+
+In summary, the simulated 21-cm field from intensity mapping is given by 
+\bea    
+\delta_{\mr{IM}}(\bmk)=\delta(\bmk)W_{\mr{fs}}(\kpa)\Theta(k_N-k)\Theta(\ell-\ell_s),
+\eea
+where $\delta(\bmk)$ is the full density field from the simulation.
+We apply tidal reconstruction to the simulated 21-cm field and get the 
+reconstructed density field defined in Eq. (\ref{eq:delta}) using the algorithm
+described above.
 
 \begin{figure}[tbp]
 \begin{center}
-\includegraphics[width=0.48\textwidth]{1.000cc2d.eps}
+\includegraphics[width=0.48\textwidth]{./figs/IM.eps}\\
+\includegraphics[width=0.48\textwidth]{./figs/kap.eps}
 \end{center}
 \vspace{-0.7cm}
-\caption{(Top) The cross-correlation coefficient of the  
-foreground subtracted density field with the original density field.
-%$r_{\delta_{fs}\delta}=P_{\delta_{fs}\delta}/\sqrt{P_{\delta_{fs}}P_\delta}$. 
-(Bottom) The cross-correlation coefficient of the reconstructed field with 
-the original density field. 
-%$r_{\kappa_{c}\delta}=P_{\kappa_{c}\delta}/\sqrt{P_{\kappa_{c}}P_\delta}$. 
-The lost radial modes appear again after reconstruction.
-The results are for $R_\parallel=60\ \mr{Mpc}/h$ and $k_c=0.5\ h/\mr{Mpc}$.}
-\label{fig:ratio}
+\caption{{\it Top}: The cross-correlation coefficient of the simulated 21-cm 
+    intensity mapping field $\delta_\mr{IM}(\bmk)$ with the original full dark 
+    matter density field $\delta(\bmk)$.
+    {\it Bottom}: The cross-correlation coefficient of the reconstructed 
+    density field $\hat{\delta}_r(\bmk)$ with the original full dark matter 
+    density field $\delta(\bmk)$. 
+    These results are for the foreground scale $R_\mr{fs}=60\ \mr{Mpc}/h$, 
+    where modes with $\kpa\lesssim0.02\ h\mr{Mpc}^{-1}$ are subtracted.}
+\label{fig:IM}
 \end{figure}
 
-We could approximately use dark matter to represent 21 cm source distributions.
-This is a good approximation since the neutral hydrogen traces the total mass
-distribution fairly well at low redshifts. We simply assume the experimental
-noise to be zero above a cut off scale and infinity below the cut off scale.
-This is a reasonable approximation for a filled aperture experiment, which
-has good brightness sensitivity and an exponetially growing noise at small 
-scales.
-We choose this scale to be $k_c=0.5\ h/\mr{Mpc}$, which corresponds to 
-$\ell=1150$ at $z=1$. This is realistic for the ongoing 21 cm experiments like
-CHIME \cite{2014SPIE.9145E..22B}, Tianlai \cite{2015ApJ...798...40X}, 
-HIRAX \cite{HIRAX}, and etc.
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=0.48\textwidth]{./figs/IM2.eps}\\
+\includegraphics[width=0.48\textwidth]{./figs/kap2.eps}
+\end{center}
+\vspace{-0.7cm}
+\caption{Same as Fig. \ref{fig:IM}, but for the foreground scale 
+$R_\mr{fs}=15\ \mr{Mpc}/h$, where modes with $\kpa\lesssim0.08\ h\mr{Mpc}^{-1}$ 
+are subtracted.}
+\label{fig:IM2}
+\end{figure}
 
-We are not going to provide a detailed 21 cm data reduction process in this 
-Letter, so we simply  use a high-pass filter 
-$W_{fs}(k_\parallel)=1-e^{-k_\parallel^2R_\parallel^2/2}$ to simulate the 
-foreground subtraction. We show results for the two different scales 
-$R_\parallel=60\ \mr{Mpc}/h$ and $R_\parallel=15\ \mr{Mpc}/h$, which give
-$W_{fs}=0.5$ at $k_\parallel=0.02\ \mr{Mpc}/h$ and 
-$k_\parallel=0.08\ \mr{Mpc}/h$, respectively. The former is an optimal case, 
-i.e., we remove modes for $k_\parallel\lesssim0.02\ \mr{Mpc}/h$ while the latter
-is already achieved in the current 21 cm observations 
-\cite{2013ApJ...763L..20M,2013MNRAS.434L..46S}.
+Figure \ref{fig:IM} shows the two-dimensional cross-correlation coefficient of
+the 21-cm intensity mapping field with the full dark matter density field. 
+We also plot the cross-correlation coefficient of the reconstructed density
+field with the full dark matter density field.
+These results are for the foreground scale $R_\mr{fs}=60\ \mr{Mpc}/h$, i.e.,
+$\kpa=0.02\ h\mr{Mpc}^{-1}$.
+The lost large-scale radial modes are successfully recovered by tidal 
+reconstruction.
+Figure \ref{fig:IM2} shows the corresponding results for the foreground scale
+$R_\mr{fs}=15\ \mr{Mpc}/h$, i.e., $\kpa=0.08\ h\mr{Mpc}^{-1}$.
+We note that the loss of more large-scale radial modes does not degrade the 
+performance of reconstruction significantly.
+This is because the tidal reconstruction method uses small-scale structure to 
+reconstruct the large-scale density field and the reconstruction performance 
+mainly depends on the number of small-scale modes.
 
-The observed 21 cm field after foreground subtraction is given by 
-\begin{eqnarray}
-\delta_{fs}(\bm{k})=\delta(\bm{k})W_{fs}(k_\parallel)\Theta(k_c-k),
-\end{eqnarray}
-where $\delta(\bm{k})$ is the density field from simulations, $W_{fs}$ accounts
-the effect of foreground subtraction and $\Theta(x)$ is the step function 
-which equals $1$ for $x\ge0$ and $0$ otherwise.
-Then we get the reconstructed clean field $\kappa_c$ from $\delta_{fs}$ via
-cosmic tidal reconstruction. In Fig. \ref{fig:ratio}, the upper panel shows the 
-cross-correlation coefficient of $\delta_{fs}$ with $\delta$ and the lower 
-panel shows the cross-correlation coefficient of $\kappa_c$ with $\delta$ for 
-$R_\parallel=60\ \mr{Mpc}/h$. 
-We find the lost radial modes appear again in the reconstructed field.
-
-{\it Cross-correlation signals.}---To show how much the cross-correlation signal
-is recovered by cosmic tidal reconstruction and estimate the detectability of 
-the cross correlation, we need to generate the lensing convergence field,
-the angular distribution of photo-$z$ galaxies and the temperature fluctuation
-due to the ISW effect using $N$-body simulations.
+To clearly see how well the $\kpa\sim0$ modes relevant for cross correlations 
+are reconstructed, we compute the projected density field by averaging the 
+three-dimensional density field along the line of sight, i.e., the $z$-axis
+of the simulation box.
+Figure \ref{fig:cc} shows the cross-correlation coefficients of the projected full dark matter density field with the projected reconstructed density fields for
+the foreground scales $\kpa=0.02\ h\mr{Mpc}^{-1}$ and $0.08\ h\mr{Mpc}^{-1}$.
+The angular scale $\ell$ is related to the three-dimensional wave number $k$
+through $\ell=k\chi(z=1)$, where $\chi(z=1)=2301\ \mr{Mpc}/h$ is the comoving
+distance to redshift $z=1$. The cross-correlation coefficient is larger than 
+$0.7$ at scale $\ell\lesssim100$ for the small $\kpa$ foreground and larger 
+that $0.65$ at scale $\ell\lesssim100$ for the large $\kpa$ foreground.
+Therefore, the successful reconstruction of $\kpa\sim0$ modes makes the cross
+correlation of  21-cm intensity mapping surveys with the CMB and photometric 
+galaxy surveys possible.
 
 \begin{figure}[tbp]
 \begin{center}
-\includegraphics[width=0.48\textwidth]{fig1b.eps}
+\includegraphics[width=0.48\textwidth]{./figs/xcc.eps}
 \end{center}
 \vspace{-0.7cm}
-\caption{The cross-correlation coefficients of 21 cm with different 
-observations for both $R_\parallel=60\ \mr{Mpc}/h$ and $15\ \mr{Mpc}/h$ with 
-$k_c=0.5\ h/\mr{Mpc}$. Cosmic tidal reconstruction recovers about 60\% signal 
-at $\ell\sim100$ and much better results are obtained on larger scales. 
+\caption{The cross-correlation coefficients of the projected full dark matter
+density field with the projected reconstructed density fields for the 
+foreground scales $\kpa=0.02\ h\mr{Mpc}^{-1}$ and $0.08\ h\mr{Mpc}^{-1}$.
+The angular scale $\ell$ is related to the three-dimensional wave number $k$
+through $\ell=k\chi(z=1)$, where $\chi(z=1)=2301\ \mr{Mpc}/h$ is the comoving
+distance to redshift $z=1$. The cross-correlation coefficient is larger than 
+$0.7$ and $0.65$ at scale $\ell\lesssim100$ for the small $\kpa$ and large 
+$\kpa$ foreground scales.
 The error bars are estimated using the bootstrap resampling method.}
 \label{fig:cc}
 \end{figure}
 
-%\begin{figure}[tbp]
-%\begin{center}
-%\includegraphics[width=0.48\textwidth]{f8.eps}
-%\end{center}
-%\vspace{-0.7cm}
-%\caption{The cross correlation signals between 21cm and other cosmic probes.}
-%\end{figure}
 
-(1) CMB lensing.---The weak lensing convergence is a weighted projection
-of the dark matter density fluctuations along the line of sight to the last 
-scattering surface,
-\begin{eqnarray}
+\section{Cross-correlation signals}
+\label{sec:ccs}
+
+To estimate the detectibility of the cross-correlation signals, we generate 
+the CMB lensing convergence field, the angular galaxy distribution from 
+photometric redshift surveys, and the temperature fluctuation due to the ISW 
+effect from the same simulation used for tidal reconstruction.
+They are line of sight projections of the dark matter density field,
+\bea    
+\delta_i(\bm{\theta})=\int d\chi W_i(\chi)\delta(\chi\bm{\theta},\chi),
+\eea
+where $W_i(\chi)$ is the window function.
+The angular cross-correlation power spectrum is then given by
+\bea
+\label{eq:xpk}
+C_\ell^{ij}=\int d\chi\frac{W_i(\chi)W_j(\chi)}{\chi^2}P_\delta(k=\ell/\chi,\chi).
+\eea
+When $i=j$, this formula gives the power spectrum for $\delta_i(\bm{\theta)}$.
+The error for the cross-correlation signal is 
+\bea    
+\sigma(C_\ell^{ij})=\bigg[\frac{1}{(2\ell+1)f_\mr{sky}\Delta\ell}
+\bigg((C_\ell^{ij})^2+\hat{C}_\ell^i
+\hat{C}_\ell^j\bigg)\bigg]^{1/2},
+\eea
+where $\hat{C}$ includes the signal and the corresponding noise.
+We set $\ell_\mr{min}=12$ and choose $f_\mr{sky}$ to be $0.25$ for CMB 
+lensing and photo-$z$ galaxies, and $1$ for ISW effect.
+
+\subsection{CMB lensing}
+
+The lensing convergence field from CMB lensing reconstruction is a weighted 
+projection of the dark matter density fluctuations along the line of sight 
+to the last scattering surface,
+\bea
 \kappa(\bm{\theta})=\int_0^{\chi_s}d\chi 
-W_\kappa(\chi)\delta(\chi\bm{\theta},\chi)\ ,
-\end{eqnarray}
+W_\kappa(\chi)\delta(\chi\bm{\theta},\chi),
+\eea
 where the lensing kernel
-\begin{eqnarray}
-W_\kappa(\chi)=\frac{3\Omega_{m0}H_0^2\chi(\chi_s-\chi)}{2a(\chi)\chi_s}\ ,
-\end{eqnarray}
-with $\chi_s=\chi(z_s=1090)$.
-To generate the convergence field from simulation data, we first squeeze the 
-simulation box to a 2D plane, then multiply the $W(\chi(z=1))$, as the 
-lensing weight is a slowly varying function for the case of CMB lensing.
-Then we obtain the lensing convergence field contributed by the simulated 
-density field.
+\bea
+W_\kappa(\chi)=\frac{3\Omega_{m0}H_0^2\chi(\chi_s-\chi)}{2a(\chi)\chi_s},
+\eea
+and $\chi_s=\chi(z_s=1090)$.
+Because the CMB lensing kernel is very broad in redshift, we take its value at
+redshift $z=1$ in the line of sight projection.
+The noise for CMB lensing measurement is assumed to be the same as the Planck 
+2015 results \cite{2016PlanckLensing}.
 
-(2) Photo-$z$ galaxies.---We calculate the projected galaxy density field at 
-$z\sim 1$ with usual photo-$z$ bin width of $0.2$, i.e., $z_\mr{p}\in(0.9,1.1)$.
+Figure \ref{fig:xcc1} shows the theoretical and measured cross power spectra. 
+We also plot the error bars of the cross power spectrum for the $\kpa=0.02\ h\mr{Mpc}^{-1}$ foreground.
+Since the error bars for the $\kpa=0.08\ h\mr{Mpc}^{-1}$ foreground are just 
+slightly larger, we only plot the error bars for the small $\kpa$ foreground.
+The total signal-to-noise ratio is $71.5$ and $62.4$ for the small and large
+$\kpa$ foregrounds. 
+
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=0.48\textwidth]{./figs/f4.eps}
+\end{center}
+\vspace{-0.7cm}
+\caption{The cross-correlation signal of 21-cm intensity mapping and CMB 
+    lensing. The solid line shows the theoretical cross power spectrum and the
+    data points are measured from the simulations. 
+    The error bars are for the foreground scale $R_\mr{fs}=60\ h/\mr{Mpc}$, 
+    i.e., $\kpa=0.02\ h\mr{Mpc}^{-1}$.
+}
+\label{fig:xcc1}
+\end{figure}
+
+\subsection{Photo-$z$ galaxies}
+
+We calculate the projected galaxy density field at $z\sim 1$ with usual photo-$z$ bin width of $0.2$, i.e., $z_\mr{p}\in(0.9,1.1)$.
 We adopt the galaxy distribution characterized by 
-$n(z)\propto z^{\alpha}\mr{exp}[-(z/z^{*})^\beta]$
-with $\alpha=2$, $z^*=0.5$, $\beta=1$
-and assume the photo-$z$ scatter $\mathcal{P}(z_\mr{p}|z)$ is perfectly known to be in a Gaussian form with photo-$z$ error $\sigma_z=0.05(1+z)$.
-The 2D angular galaxy distribution is given by
-\begin{eqnarray}
-\delta_\mr{2D}(\bm{\theta})=\int_0^\infty dzW_\mr{p}(z)
+\bea
+n(z)\propto z^{\alpha}\mr{exp}\big[-(z/z^{*})^\beta\big],
+\eea
+with $\alpha=2$, $z^*=0.5$, $\beta=1$ and assume the photometric redshift
+scatter $\mathcal{P}(z_\mr{p}|z)$ is perfectly known to be in a Gaussian form 
+with photo-$z$ rms error $\sigma_z=0.05(1+z)$.
+The angular galaxy distribution is given by
+\bea
+\delta_g(\bm{\theta})=\int_0^\infty dzW_\mr{p}(z)b(z)
 \delta(\chi(z)\bm{\theta},\chi(z))\ ,
-\end{eqnarray}
+\eea
 where the window function 
-\begin{eqnarray}
-W_\mr{p}(z)\propto\int_{0.9}^{1.1} n(z) \mathcal{P}(z_\mr{p}|z) dz_\mr{p}\ 
-\end{eqnarray}
-with normalization $\int W_\mr{p}(z)dz=1$.
+\bea
+W_\mr{p}(z)\propto n(z)\int_{0.9}^{1.1} \mathcal{P}(z_\mr{p}|z) dz_\mr{p}\ 
+\eea
+with normalization $\int W_\mr{p}(z)dz=1$. 
+We assume a linear galaxy bias $b(z)=1+0.84z$.
+For photo-$z$ galaxies from LSST-like surveys, the shot noise is negligible
+on degree scales. 
 
-(3) ISW effect.---The fractional CMB temperature fluctuations induced by the 
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=0.48\textwidth]{./figs/f5.eps}
+\end{center}
+\vspace{-0.7cm}
+\caption{The cross-correlation signal of 21-cm intensity mapping and photo-$z$ 
+    galaxies. The solid curve shows the theoretical cross power spectrum and 
+    the data points are measured from the simulations. 
+    The error bars are for the foreground scale $R_\mr{fs}=60\ h/\mr{Mpc}$, 
+    i.e., $\kpa=0.02\ h\mr{Mpc}^{-1}$.
+}
+\label{fig:xcc2}
+\end{figure}
+
+Figure \ref{fig:xcc2} shows the theoretical and measured cross power spectra. 
+We also plot the error bars for the foreground scale $\kpa=0.02\ h\mr{Mpc}^{-1}$.
+The total signal-to-noise ratio is $179.2$ and $151.6$ for the small and large
+$\kpa$ foregrounds, respectively.
+The significant cross correlation between reconstructed 21-cm field and photo-$z$ galaxies makes it possible to calibrate the redshift distribution of galaxies from imaging surveys using 21-cm intensity mapping surveys \cite{2017xPhotoz2}.
+
+\subsection{ISW effect}
+
+The fractional CMB temperature fluctuations induced by the 
 ISW effect is given as 
 \begin{eqnarray}
 \bigg(\frac{\Delta T}{T}\bigg)_\mr{ISW}(\bm\theta)=-2\int_0^{\chi_s}d\chi
@@ -343,115 +617,107 @@ $\dot\delta(\bm{k},t)=\dot D(t)\delta(\bm{k},t=0)$, we have
 {2a(\chi)}\frac{\partial\mr{ln}(D/a)}{\partial\chi}
 \frac{\delta(\bm{k},\chi)}{k^2}\ ,
 \end{eqnarray}
-where $D$ is the growth factor.
+where $D$ is the linear growth function.
 In our implementation, we also approximate the time dependent factor as a 
 constant across the simulation box.
+For the ISW effect, the noise is just the large-scale CMB power $C_\ell^{TT}$. 
+
+Figure \ref{fig:xcc3} shows the theoretical and measured cross power spectra.
+We plot the error bars for the small $\kpa$ foreground.
+The total signal-to-noise ratio is $9.7$ and $9.2$ for the small and large 
+$\kpa$ foregrounds.
+The redshift information from 21-cm intensity mapping allows us to constrain
+the expansion history of the Universe as a function of redshift.
+The detectability of ISW effect can be further improved by including CMB 
+polarization data \cite{2011improveISW}.
 
 \begin{figure}[tbp]
 \begin{center}
-\includegraphics[width=0.48\textwidth]{f8.eps}
+\includegraphics[width=0.48\textwidth]{./figs/f6.eps}
 \end{center}
-\vspace{-1.9cm}
-\caption{(Top) The cross correlation of 21 cm and CMB lensing.
-(Middle) The correlation of 21 cm and photo-$z$ galaxies. (Bottom) The
-correlation of 21 cm and ISW effect. The solid curve shows the signal and the 
-dotted curve shows the noise per mode. The results are 
-for $R_\parallel=60\ \mr{Mpc}/h$ and $k_c=0.5\ h/\mr{Mpc}$.}
-\label{fig:cs}
+\vspace{-0.7cm}
+\caption{The cross-correlation signal of 21-cm intensity mapping and ISW effect.
+    The solid curve shows the theoretical signal and the data points are 
+    measured from the simulations. The error bars are for the foreground scale 
+    $R_\mr{fs}=60\ h/\mr{Mpc}$, i.e., $\kpa=0.02\ h\mr{Mpc}^{-1}$.
+}
+\label{fig:xcc3}
 \end{figure}
 
-In Fig. \ref{fig:cc}, we show the cross-correlation coefficients of 21 cm with 
-different observations for both $R_\parallel=60\ \mr{Mpc}/h$ and 
-$15\ \mr{Mpc}/h$. Due to the similar treatments of CMB lensing field
-and the ISW field, we get the same correlation coefficient for them. 
-The correlation with photo-$z$ galaxies is smaller than the other
-two since we only use a narrow bin which locates at $z=1$ with bin width $0.2$.
+\section{Discussion}
+\label{sec:dis}
 
-In each panel of Fig. \ref{fig:cs}, we show the cross-correlation signal 
-$C_\ell^{ij}$ and noise per mode
-$(C_\ell^in_\ell^j+n_\ell^iC_\ell^j+n^i_\ell n^j_\ell)^{1/2}$, where $n_\ell^i$
-is the noise power spectrum. The error of the signal is 
-\begin{eqnarray}
-(\Delta C_\ell^{ij})^2=\frac{1}{(2\ell+1)f_\mr{sky}\Delta\ell}
-\bigg[{(C_\ell^{ij})^2+(C_\ell^{i}+n_\ell^{i})
-(C_\ell^{j}+n_\ell^{j})}\bigg].
-\end{eqnarray}
-For the 21 cm field, $n_\ell^\mr{21cm}$ is given through Eq. (\ref{eq:kapc}). 
-The noise for CMB lensing is assumed to be the same as Planck 2015 results 
-\cite{2015:plancklensing}. For photo-$z$ galaxies, the shot noise is negligible
-on degree scales. For ISW effect, $n_\ell^\mr{ISW}$ is the large-scale
-CMB power spectrum $C_\ell^{TT}$. We choose $f_\mr{sky}$ to be $0.25$ for 
-CMB lensing and photo-$z$ galaxies, and $1$ for the ISW effect. By
-using cosmic tidal reconsruction, we are able to detect the cross-correlation
-signals with ongoing 21 cm experiments \cite{2014SPIE.9145E..22B,2015ApJ...798...40X,HIRAX}. 
-The redshift information contained in 21 cm observations allows us to constrain
-the expansion history of the Universe by cross correlating with the ISW effect.
-The detectability for ISW effect can be further improved by including CMB 
-polarization data \cite{2011PhRvD..83f3001L}.
+The detection significance presented here is for a 21-cm intensity mapping
+survey of redshifts $0.8$--$1.4$, covering the quarter sky (full sky for 
+ISW effect).
+We use line of sight projections of the dark matter density field at 
+redshift $z=1$ to approximate the observed cosmic fields. 
+In reality, we need to consider the redshift evolution of density fluctuations
+because of the relative wide redshift range.
+The Limber approximation used to compute cross power spectrum is not accurate 
+on very large scales.
+Since angular power spectrum is larger when computed using exact integration 
+than with the Limber approximation \cite{2017Limber,2017Limber2}, the detection
+significance should not be degraded by this approximation.
+On extremely large scales, the relativistic effects should also be included 
+when predicting the angular power spectrum \cite{2013GRSignal,2017GRSignal}.
+As there are not many modes measurable on extremely large scales, the 
+realtivistic effects should not affect the results much.
+However, to be conservative, we still use only the $\ell>12$ angular modes to 
+estimate the detection significance.
 
-{\it Discussion.}---It may seem to be odd that the modes lost appear again
-after reconstruction. This can be understood intuitively.
-The reconstructed field $\kappa_c$ is given by the linear combination of 
-quadratic estimators, in the form of 
-$\kappa_c(\bm{x})\sim\delta_{fs}(\bm{x})\delta_{fs}(\bm{x})$. In Fourier 
-space this can be written as $\kappa_c(\bm{k})\sim\int d^3k'
-\delta_{fs}(\bm{k}')\delta_{fs}(\bm{k}-\bm{k}')$, i.e., the reconstructed 
-field is given by the convolution of $\delta_{fs}(\bm{k}')$ and 
-$\delta_{fs}(\bm{k}-\bm{k}')$. Although $\delta_{fs}$ has no small radial
-modes, i.e. $k_{\parallel}'$ and $k_\parallel-k_{\parallel}'$ can not be small,
-$k_\parallel$ can reach the low $k_\parallel$ regime.
-Here, we extract the information about matter distribution on large scales 
-contained in the small-scale matter distributions. The power spectrum of 
-$\kappa_c$ is given by the connected four point function of $\delta_{fs}$,
-which means we are using the information that comes from higher order statistics
-and is not included in the two point statistics of $\delta_{fs}$, i.e., 
-power spectrum.
+The tidal shear estimators adopted here are optimal only for the Gaussian field
+and in the long wavelength limit \cite{2016Tides,2008LensingEst,2012LensingEst}.
+The results can be improved by constructing optimal estimators for non-Gaussian 
+fields as have done in 21-cm lensing \cite{2010LensingEst}.
+The correlation coefficient drops quickly towards small scales.
+This is because there is not enough small-scale modes in 21-cm intensity mapping
+surveys and the estimators are not optimal in the equilateral configuration.
+The long wavelength optimal estimators relies on the number of small-scale
+modes; the performance would be better with more small-scale structures. 
+The tidal reconstruction can still be improved by developing new algorithms to
+deal with the nonlinear coupling beyond the squeezed configuration.
 
-The tidal shear estimators we used are optimal for Gaussian sources and in the 
-long-wavelength limit \cite{2015:zhu}.
-The results can still be improved by constructing optimal tidal shear 
-estimators for non-Gaussian sources as in 21 cm lensing \cite{2010:lu} and 
-constructing optimal estimators on all scales. 
-This means here we present the ``least optimal'' case of recovering the 
-cross-correlation signals and even better results can be achieved in future.
+The BAO reconstruction technique has been shown to be still useful in 21-cm 
+surveys \cite{2016BAO,2016Combine,2017BAO}.
+While there are not many mode with small $\kpa$ lost due to the foreground, the
+differential motions which smear the BAO peak are substantially contributed by 
+large-scale modes with $k\lesssim0.1\ h\mr{Mpc}^{-1}$.
+Performing nonlinear reconstruction also needs these modes to estimate the 
+large-scale linear displacement \cite{2017NR2,2016NR,2017NR}.
+Cosmic tidal reconstruction compensates the foreground wedge at small $\kpa$
+and large $\kpe$ and hence can improve the BAO measurements from 21-cm surveys 
+\cite{2016BAO,2016Combine}. 
+These recovered foreground modes can also improve the efficiency of the void 
+finder with interferometric 21-cm experiments \cite{2017Void}.
+In addition to the cross correlations explored here, the tidal reconstruction 
+method also works for the kinematic Sunyaev-Zel'dovich effect which we leave 
+for future work.
 
-The BAO reconstruction technique \cite{2007:bao} has been shown to be still
-useful in 21 cm surveys \cite{2015:bao1,2015:bao2}. While there are not 
-many modes with small $k_\parallel$ lost in the foreground subtraction, the 
-differential motions which smear the BAO peaks are substantially contributed
-by large-scale modes with $k\lesssim0.1\ h/\mr{Mpc}$ \cite{2007:bao}.
-The tidal reconstruction compensates the foreground wedge at low $k_\parallel$
-and high $k_\perp$ and hence can further improve the BAO reconstruction in 21 cm
-surveys. 
-%Since all cosmological 21 cm experiments share the same foreground
-%problem, no matter low redshift surveys for BAO or high redshift observations
-%for the EOR signal, the tidal reconstruction can also help high redshift 
-%cross-correlations like the 21 cm-kSZ signal from EOR \cite{2015:marcelo}. 
-All 21 cm experiments, no matter the low redshift experiments for BAO effect
-or the high redshift experiments for EOR signal, share the same foreground 
-problem. Although not examed here, we expect great help from the cosmic tidal
-reconstruction in high redshift cross correlations, like 21 cm-kSZ signal from 
-EOR \cite{2015:marcelo}.
-Based on above discussions, we conclude that cosmic tidal reconstruction is 
-extremely valuable for all cosmological 21 cm surveys as well as CMB and
-photometric redshift observations.
+All cosmological 21-cm experiments share the same foreground problem, no matter
+low redshift BAO experiment or high redshift epoch of reionization observation.
+Therefore, the tidal reconstruction method is also important for high redshift 
+experiment such as measuring the cross correlation of 21-cm with the kinematic
+Sunyaev-Zel'dovich effect from the epoch of reionization \cite{2016kSZ}.
 
-We acknowledge helpful discussions with Alex van Engelen, Marcelo Alvarez,
-Philippe Berger, Yi-Chao Li and Shifan Zuo.
-The simulations were performed on the BGQ supercomputer 
-at the SciNet HPC Consortium.
-SciNet is funded by: the Canada Foundation for Innovation under the auspices 
-of Compute Canada;
-the Government of Ontario; the Ontario Research Fund -- Research Excellence;
-and the University of Toronto.
-We acknowledge the support of the Chinese MoST 863 program under Grant 
-No. 2012AA121701, the CAS Science Strategic Priority Research Program 
-XDB09000000, the NSFC under Grant No. 11373030 and 11403071, IAS at 
-Tsinghua University, CHEP at Peking University, and NSERC.
+
+\section*{Acknowledgements}
+We thank Alex van Engelen, Marcelo Alvarez, Philippe Berger, 
+Yi-Chao Li, Shifan Zuo, Wen-Xiao Xu, and Tian-Xiang Mao for helpful discussions.
+We acknowledge the support of the Chinese Ministry of Science and Technology
+under Grant No. 2016YFE0100300, the National Natural Science Foundation of 
+China under Grants No. 11633004, No. 11373030, No. 11773048 and No. 11403071, 
+CAS Grant No. QYZDJ-SSW-SLH017, and Natural Sciences and Engineering Research 
+Council of Canada. 
+The simulations are performed on the BGQ supercomputer at the SciNet HPC 
+Consortium. SciNet is funded by the following: the Canada Foundation for 
+Innovation under 
+the auspices of Compute Canada, the Government of Ontario, Ontario Research 
+Fund---Research Excellence, and the University of Toronto.
+The Dunlap Institute is funded through an endowment established by the David Dunlap family and the University of Toronto.
 Research at the Perimeter Institute is supported by the Government of Canada 
 through Industry Canada and by the Province of Ontario through the Ministry of 
-Research $\&$ Innovation.
-The Dunlap Institute is funded through an endowment established by the David Dunlap family and the University of Toronto.
+Research and Innovation.
 
 \bibliographystyle{apsrev}
 \bibliography{cro}
